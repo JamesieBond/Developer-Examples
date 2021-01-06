@@ -1,0 +1,81 @@
+<included>
+    <conversionRule conversionWord="crlf" converterClass="com.tenx.logging.util.CRLFConverter" />
+
+
+
+    <property resource="git.properties"/>
+
+    <springProperty scope="context" name="appName" source="spring.application.name"/>
+
+    <springProperty scope="context" name="maskPII" source="10xlogging.maskPII"/>
+
+    <if condition='property("maskPII").equals("true")'>
+        <then>
+            <springProperty scope="context" name="extensionPIIPattern" source="10xlogging.extensionPIIPattern"/>
+            <conversionRule conversionWord="msg" converterClass="com.tenx.logging.util.PIIConverter" />
+        </then>
+    </if>
+
+    <appender name="10XSTANDARD" class="ch.qos.logback.core.ConsoleAppender">
+        <springProfile name="!(dev | local)">
+            <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                <providers>
+                    <timestamp>
+                        <timeZone>UTC</timeZone>
+                    </timestamp>
+                    <version>1</version>
+                    <loggerName>
+                        <shortenedLoggerNameLength>20</shortenedLoggerNameLength>
+                    </loggerName>
+                    <threadName/>
+                    <logLevel/>
+                    <logLevelValue/>
+                    <pattern>
+                        <omitEmptyFields>true</omitEmptyFields>
+                        <pattern>
+                            {
+                            "message": "%crlf(%msg)",
+                            "service_name": "${appName}",
+                            "service_version": "${git.commit.id.abbrev}",
+                            "trace_id": "%X{X-B3-TraceId:-}",
+                            "span_id": "%X{X-B3-SpanId:-}",
+                            "parent_span_id": "%X{X-B3-ParentSpanId:-}",
+                            "correlation_id": "%X{correlationId:-}",
+                            "subscription_keys": "%X{subscriptionKeys:-}",
+                            "transaction_keys": "%X{transactionKeys:-}",
+                            "transaction_status": "%X{transactionStatus:-}",
+                            "transaction_type": "%X{transactionType:-}"
+                            }
+                        </pattern>
+                    </pattern>
+                    <provider class="com.tenx.logging.util.UniqueIdProvider"/>
+                    <logstashMarkers/>
+                    <stackTrace>
+                        <fieldName>stack_trace</fieldName>
+                        <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
+                            <shortenedClassNameLength>short</shortenedClassNameLength>
+                            <maxDepthPerThrowable>short</maxDepthPerThrowable>
+                            <maxLength>short</maxLength>
+                            <rootCauseFirst>true</rootCauseFirst>
+                            <exclude>sun\.reflect\..*\.invoke.*</exclude>
+                        </throwableConverter>
+                    </stackTrace>
+                </providers>
+            </encoder>
+        </springProfile>
+        <springProfile name="(dev | local)">
+            <encoder>
+                <pattern>%d{HH:mm:ss} %-5level %logger{36} - %msg %n</pattern>
+            </encoder>
+        </springProfile>
+    </appender>
+    <logger name="com.tenx.logging.logger.DatabaseLogger" level="OFF" additivity="false">
+        <appender-ref ref="10XSTANDARD"/>
+    </logger>
+    <logger name="com.tenx.logging.logger.InboundLogger" level="OFF" additivity="false">
+        <appender-ref ref="10XSTANDARD"/>
+    </logger>
+    <logger name="com.tenx.logging.logger.OutboundLogger" level="OFF" additivity="false">
+        <appender-ref ref="10XSTANDARD"/>
+    </logger>
+</included>

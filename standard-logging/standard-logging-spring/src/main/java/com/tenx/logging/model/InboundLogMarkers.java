@@ -1,0 +1,16 @@
+package com.tenx.logging.model;
+
+import lombok.Builder;
+import lombok.Getter;
+
+@Builder
+@Getter
+public class InboundLogMarkers {
+    private String start_time;
+    private long response_time;
+    private String http_request_method;
+    private String http_request_host;
+    private String http_request_path;
+    private String http_request_header_content_type;
+    private int http_response_code;
+}

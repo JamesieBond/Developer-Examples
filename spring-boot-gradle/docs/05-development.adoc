@@ -1,0 +1,7 @@
+= Development
+
+The content under this section will document resources and knowledge that can be used to develope the microservice.
+
+https://bitbucket.10x.mylti3gh7p4x.net/projects/FT24/repos/fraud-aml-manager/browse[Bitbucket repo]
+
+http://jenkins.internal.10x.mylti3gh7p4x.net/view/FT24%20-%20Fraud,%20Financial%20Crime%20and%20Customer%20Security/job/fraud-aml-manager/[Jenkins]

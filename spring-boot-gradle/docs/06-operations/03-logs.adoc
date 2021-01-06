@@ -1,0 +1,8 @@
+= Logs
+
+This page focuses on the understanding of log entries as seen through supportive services.
+This is something that will need to be enabled for you by your system administrator
+
+* link:https://centralad-mylti3gh7p4x.awsapps.com/console/#login:redirect_to=awsconsole[AWS Console]
+
+

@@ -1,0 +1,15 @@
+pluginManagement {
+    repositories {
+        maven { url 'http://nexus.internal.10x.mylti3gh7p4x.net/repository/gradle-plugins/' }
+        maven { url 'http://nexus.internal.10x.mylti3gh7p4x.net/repository/jcenter/' }
+        // below repository is required for Avro schema gradle plugin
+        // to generate the schema registry classes
+        maven {
+            name "JCenter Gradle Plugins"
+            url "http://nexus.internal.10x.mylti3gh7p4x.net/repository/bintray-gradle-plugins"
+        }
+    }
+}
+rootProject.name = 'spring-boot-gradle'
+
+include 'fraud-aml-manager-service', 'fraud-aml-manager-pact', 'post-deployment-tests'

@@ -1,0 +1,7 @@
+= Build Pipelines
+
+The aim of this page is to provide a place of the team to understand the pipelines that are used to build the micro-service.
+
+== Jenkins
+
+* link:https://jenkins.10x.mylti3gh7p4x.net/job/fraud-aml-manager/[Fraud AML Manager]

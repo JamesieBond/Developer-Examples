@@ -1,0 +1,325 @@
+{
+  "type": "record",
+  "name": "BusinessEventV2",
+  "namespace": "com.tenxbanking.party.event.business",
+  "fields": [
+    {
+      "name": "partyKey",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "tenantKey",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "fullLegalName",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "tradingName",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "businessIdentificationCode",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "businessType",
+      "type": {
+        "type": "enum",
+        "name": "BusinessType",
+        "symbols": [
+          "PrivateLimited",
+          "LimitedByGuarantee",
+          "SoleTrader",
+          "Partnership",
+          "LimitedLiabilityPartnership",
+          "Charity"
+        ]
+      }
+    },
+    {
+      "name": "businessCategory",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "BusinessCategoryV2",
+          "fields": [
+            {
+              "name": "code",
+              "type": [
+                "null",
+                {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              ],
+              "default": null
+            },
+            {
+              "name": "scheme",
+              "type": [
+                "null",
+                {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              ],
+              "default": null
+            }
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "businessCategories",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "BusinessCategoryV2"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "mobileNumber",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "email",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "address",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "name": "BusinessAddressV2",
+            "fields": [
+              {
+                "name": "addressLine1",
+                "type": {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              },
+              {
+                "name": "addressLine2",
+                "type": [
+                  "null",
+                  {
+                    "type": "string",
+                    "avro.java.string": "String"
+                  }
+                ],
+                "default": null
+              },
+              {
+                "name": "addressLine3",
+                "type": [
+                  "null",
+                  {
+                    "type": "string",
+                    "avro.java.string": "String"
+                  }
+                ],
+                "default": null
+              },
+              {
+                "name": "addressLine4",
+                "type": [
+                  "null",
+                  {
+                    "type": "string",
+                    "avro.java.string": "String"
+                  }
+                ],
+                "default": null
+              },
+              {
+                "name": "addressLine5",
+                "type": [
+                  "null",
+                  {
+                    "type": "string",
+                    "avro.java.string": "String"
+                  }
+                ],
+                "default": null
+              },
+              {
+                "name": "postCode",
+                "type": {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              },
+              {
+                "name": "city",
+                "type": {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              },
+              {
+                "name": "country",
+                "type": {
+                  "type": "string",
+                  "avro.java.string": "String"
+                }
+              },
+              {
+                "name": "state",
+                "type": [
+                  "null",
+                  {
+                    "type": "string",
+                    "avro.java.string": "String"
+                  }
+                ],
+                "default": null
+              },
+              {
+                "name": "status",
+                "type": {
+                  "type": "enum",
+                  "name": "BusinessAddressStatus",
+                  "doc": "Specified allowed event types",
+                  "symbols": [
+                    "ACTIVE",
+                    "PENDING_VERIFICATION",
+                    "EXPIRED"
+                  ]
+                }
+              },
+              {
+                "name": "addressType",
+                "type": {
+                  "type": "enum",
+                  "name": "AddressType",
+                  "symbols": [
+                    "ADDR",
+                    "HOME",
+                    "BIZZ",
+                    "MLTO",
+                    "DLVY",
+                    "PBOX",
+                    "REGD"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "PartyStatus",
+        "symbols": [
+          "PROSPECT",
+          "REGISTERED",
+          "PROVISIONED",
+          "REJECTED",
+          "INACTIVE"
+        ]
+      }
+    },
+    {
+      "name": "kybResult",
+      "type": [
+        "null",
+        {
+          "type": "enum",
+          "name": "KybResult",
+          "symbols": [
+            "Passed",
+            "NotChecked",
+            "ExemptBelowLimit",
+            "ClientMoneyTypeExempt",
+            "AuthorisedCredit",
+            "PostalOrElectronicPaymentExempt",
+            "AdverseMedia",
+            "Sanction",
+            "Clear",
+            "Consider",
+            "Fail"
+          ]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "createdDate",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "updatedDate",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "default": null
+    }
+  ]
+}

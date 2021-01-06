@@ -1,0 +1,2426 @@
+{
+    "type" : "record",
+    "name" : "IsoCreditTransferFraudCheckRequestV01",
+    "namespace" : "com.tenxbanking.iso.lib",
+    "doc" : "pacs.008.001.08 Fraud Check Request",
+    "fields" : [ {
+      "name" : "applicationHeader",
+      "type" : {
+        "type" : "record",
+        "name" : "BusinessApplicationHeader",
+        "doc" : "head.001.001.02-BusinessApplicationHeaderV02",
+        "fields" : [ {
+          "name" : "from",
+          "type" : {
+            "type" : "record",
+            "name" : "Party44Choice",
+            "fields" : [ {
+              "name" : "organisationIdentification",
+              "type" : [ "null", {
+                "type" : "record",
+                "name" : "PartyIdentification",
+                "fields" : [ {
+                  "name" : "name",
+                  "type" : [ "null", {
+                    "type" : "string",
+                    "avro.java.string" : "String"
+                  } ],
+                  "default" : null
+                }, {
+                  "name" : "postalAddress",
+                  "type" : [ "null", {
+                    "type" : "record",
+                    "name" : "PostalAddress24",
+                    "fields" : [ {
+                      "name" : "addressType",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "AddressType3Choice",
+                        "fields" : [ {
+                          "name" : "code",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "proprietary",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "GenericIdentification30",
+                            "fields" : [ {
+                              "name" : "identification",
+                              "type" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            }, {
+                              "name" : "issuer",
+                              "type" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            }, {
+                              "name" : "schemeName",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "department",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "subDepartment",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "streetName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "buildingNumber",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "buildingName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "floor",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "postBox",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "room",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "postCode",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "townName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "townLocationName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "districtName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "countrySubDivision",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "country",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "addressLine",
+                      "type" : [ "null", {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        }
+                      } ],
+                      "default" : null
+                    } ]
+                  } ],
+                  "default" : null
+                }, {
+                  "name" : "countryOfResidence",
+                  "type" : [ "null", {
+                    "type" : "string",
+                    "avro.java.string" : "String"
+                  } ],
+                  "default" : null
+                }, {
+                  "name" : "contactDetails",
+                  "type" : [ "null", {
+                    "type" : "record",
+                    "name" : "Contact4",
+                    "fields" : [ {
+                      "name" : "namePrefix",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "name",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "phoneNumber",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "mobileNumber",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "faxNumber",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "emailAddress",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "emailPurpose",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "jobTitle",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "responsibility",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "department",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "other",
+                      "type" : [ "null", {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "record",
+                          "name" : "OtherContact1",
+                          "fields" : [ {
+                            "name" : "channelType",
+                            "type" : {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            }
+                          }, {
+                            "name" : "identification",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          } ]
+                        }
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "preferredMethod",
+                      "type" : [ "null", {
+                        "type" : "enum",
+                        "name" : "PreferredMethod",
+                        "symbols" : [ "LETT", "MAIL", "PHON", "FAXX", "CELL" ]
+                      } ],
+                      "default" : null
+                    } ]
+                  } ],
+                  "default" : null
+                }, {
+                  "name" : "identification",
+                  "type" : [ "null", {
+                    "type" : "record",
+                    "name" : "Party38Choice",
+                    "fields" : [ {
+                      "name" : "organisationIdentification",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "OrganisationIdentification",
+                        "fields" : [ {
+                          "name" : "other",
+                          "type" : [ "null", {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "record",
+                              "name" : "GenericOrganisationIdentification",
+                              "fields" : [ {
+                                "name" : "identification",
+                                "type" : {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                }
+                              }, {
+                                "name" : "schemeName",
+                                "type" : [ "null", {
+                                  "type" : "record",
+                                  "name" : "OrganisationIdentificationSchemeName1Choice",
+                                  "fields" : [ {
+                                    "name" : "code",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  }, {
+                                    "name" : "proprietary",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  } ]
+                                } ],
+                                "default" : null
+                              }, {
+                                "name" : "issuer",
+                                "type" : [ "null", {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                } ],
+                                "default" : null
+                              } ]
+                            }
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "LEI",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "anyBIC",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "privateIdentification",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "PersonIdentification13",
+                        "fields" : [ {
+                          "name" : "dateAndPlaceOfBirth",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "DateAndPlaceOfBirth1",
+                            "fields" : [ {
+                              "name" : "birthDate",
+                              "type" : {
+                                "type" : "int",
+                                "logicalType" : "date"
+                              }
+                            }, {
+                              "name" : "provinceOfBirth",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "cityOfBirth",
+                              "type" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            }, {
+                              "name" : "countryOfBirth",
+                              "type" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            } ]
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "other",
+                          "type" : [ "null", {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "record",
+                              "name" : "GenericPersonIdentification1",
+                              "fields" : [ {
+                                "name" : "identification",
+                                "type" : {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                }
+                              }, {
+                                "name" : "schemeName",
+                                "type" : [ "null", {
+                                  "type" : "record",
+                                  "name" : "PersonIdentificationSchemeName1Choice",
+                                  "fields" : [ {
+                                    "name" : "code",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  }, {
+                                    "name" : "proprietary",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  } ]
+                                } ],
+                                "default" : null
+                              }, {
+                                "name" : "issuer",
+                                "type" : [ "null", {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                } ],
+                                "default" : null
+                              } ]
+                            }
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    } ]
+                  } ],
+                  "default" : null
+                } ]
+              } ]
+            } ]
+          }
+        }, {
+          "name" : "to",
+          "type" : "Party44Choice"
+        }, {
+          "name" : "businessMessageIdentifier",
+          "type" : {
+            "type" : "string",
+            "avro.java.string" : "String"
+          }
+        }, {
+          "name" : "messageDefinitionIdentifier",
+          "type" : {
+            "type" : "string",
+            "avro.java.string" : "String"
+          }
+        }, {
+          "name" : "creationDate",
+          "type" : {
+            "type" : "long",
+            "logicalType" : "timestamp-millis"
+          }
+        } ]
+      },
+      "doc" : "head.001.001.02-BusinessApplicationHeaderV02"
+    }, {
+      "name" : "creditTransferFraudCheckRequest",
+      "type" : {
+        "type" : "record",
+        "name" : "CreditTransferFraudCheckRequestV01",
+        "doc" : "Fraud check request based on - pacs.008.001.08",
+        "fields" : [ {
+          "name" : "groupHeader",
+          "type" : {
+            "type" : "record",
+            "name" : "GroupHeader93",
+            "fields" : [ {
+              "name" : "messageIdentification",
+              "type" : {
+                "type" : "string",
+                "avro.java.string" : "String"
+              }
+            }, {
+              "name" : "creationDateTime",
+              "type" : {
+                "type" : "long",
+                "logicalType" : "timestamp-millis"
+              }
+            }, {
+              "name" : "batchBooking",
+              "type" : [ "null", "boolean" ],
+              "default" : null
+            }, {
+              "name" : "numberOfTransactions",
+              "type" : {
+                "type" : "string",
+                "avro.java.string" : "String"
+              }
+            }, {
+              "name" : "controlSum",
+              "type" : [ "null", {
+                "type" : "bytes",
+                "logicalType" : "decimal",
+                "precision" : 18,
+                "scale" : 2
+              } ],
+              "default" : null
+            }, {
+              "name" : "totalAmount",
+              "type" : [ "null", {
+                "type" : "record",
+                "name" : "ActiveCurrencyAndAmount",
+                "fields" : [ {
+                  "name" : "currency",
+                  "type" : {
+                    "type" : "string",
+                    "avro.java.string" : "String"
+                  }
+                }, {
+                  "name" : "value",
+                  "type" : {
+                    "type" : "bytes",
+                    "logicalType" : "decimal",
+                    "precision" : 18,
+                    "scale" : 2
+                  }
+                } ]
+              } ],
+              "default" : null
+            } ]
+          }
+        }, {
+          "name" : "creditTransferTransactionInformation",
+          "type" : {
+            "type" : "array",
+            "items" : {
+              "type" : "record",
+              "name" : "CreditTransferTransaction39",
+              "fields" : [ {
+                "name" : "paymentIdentification",
+                "type" : {
+                  "type" : "record",
+                  "name" : "PaymentIdentification7",
+                  "fields" : [ {
+                    "name" : "instructionIdentification",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "endToEndIdentification",
+                    "type" : {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    }
+                  }, {
+                    "name" : "transactionIdentification",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "UETR",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "clearingSystemReference",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  } ]
+                }
+              }, {
+                "name" : "paymentTypeInformation",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "PaymentTypeInformation28",
+                    "fields" : [ {
+                      "name" : "instructionPriority",
+                      "type" : [ "null", {
+                        "type" : "enum",
+                        "name" : "Priority2Code",
+                        "symbols" : [ "HIGH", "NORM" ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "clearingChannel",
+                      "type" : [ "null", {
+                        "type" : "enum",
+                        "name" : "ClearingChannel2Code",
+                        "symbols" : [ "RTGS", "RTNS", "MPNS", "BOOK" ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "serviceLevel",
+                      "type" : [ "null", {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "record",
+                          "name" : "ServiceLevel8Choice",
+                          "fields" : [ {
+                            "name" : "code",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "proprietary",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          } ]
+                        }
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "localInstrument",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "LocalInstrument2Choice",
+                        "fields" : [ {
+                          "name" : "code",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "proprietary",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "categoryPurpose",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "CategoryPurpose1Choice",
+                        "fields" : [ {
+                          "name" : "code",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "proprietary",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    } ]
+                  }
+                } ],
+                "default" : null
+              }, {
+                "name" : "settlementAmount",
+                "type" : "ActiveCurrencyAndAmount"
+              }, {
+                "name" : "settlementDate",
+                "type" : [ "null", {
+                  "type" : "int",
+                  "logicalType" : "date"
+                } ],
+                "default" : null
+              }, {
+                "name" : "settlementPriority",
+                "type" : [ "null", {
+                  "type" : "enum",
+                  "name" : "Priority3Code",
+                  "symbols" : [ "URGT", "HIGH", "NORM" ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "settlementTimeIndication",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "SettlementDateTimeIndication1",
+                  "fields" : [ {
+                    "name" : "debitDateTime",
+                    "type" : [ "null", {
+                      "type" : "long",
+                      "logicalType" : "timestamp-millis"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "creditDateTime",
+                    "type" : [ "null", {
+                      "type" : "long",
+                      "logicalType" : "timestamp-millis"
+                    } ],
+                    "default" : null
+                  } ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "settlementTimeRequest",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "SettlementTimeRequest2",
+                  "fields" : [ {
+                    "name" : "cLSTime",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "tillTime",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "fromTime",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "rejectTime",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  } ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "acceptanceDateTime",
+                "type" : [ "null", {
+                  "type" : "long",
+                  "logicalType" : "timestamp-millis"
+                } ],
+                "default" : null
+              }, {
+                "name" : "poolingAdjustmentDate",
+                "type" : [ "null", {
+                  "type" : "int",
+                  "logicalType" : "date"
+                } ],
+                "default" : null
+              }, {
+                "name" : "instructedAmount",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "ActiveOrHistoricCurrencyAndAmount",
+                  "fields" : [ {
+                    "name" : "currency",
+                    "type" : {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    }
+                  }, {
+                    "name" : "value",
+                    "type" : {
+                      "type" : "bytes",
+                      "logicalType" : "decimal",
+                      "precision" : 18,
+                      "scale" : 2
+                    }
+                  } ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "exchangeRate",
+                "type" : [ "null", "double" ],
+                "default" : null
+              }, {
+                "name" : "chargeBearer",
+                "type" : {
+                  "type" : "enum",
+                  "name" : "ChargeBearerType1Code",
+                  "symbols" : [ "DEBT", "CRED", "SHAR", "SLEV" ]
+                }
+              }, {
+                "name" : "chargesInformation",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "Charges7",
+                    "fields" : [ {
+                      "name" : "amount",
+                      "type" : "ActiveOrHistoricCurrencyAndAmount"
+                    }, {
+                      "name" : "agent",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "BranchAndFinancialInstitutionIdentification6",
+                        "fields" : [ {
+                          "name" : "financialInstitutionIdentification",
+                          "type" : {
+                            "type" : "record",
+                            "name" : "FinancialInstitutionIdentification18",
+                            "fields" : [ {
+                              "name" : "BICFI",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "LEI",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "clearingSystemMemberIdentification",
+                              "type" : [ "null", {
+                                "type" : "record",
+                                "name" : "ClearingSystemMemberIdentification2",
+                                "fields" : [ {
+                                  "name" : "clearingSystemIdentification",
+                                  "type" : [ "null", {
+                                    "type" : "record",
+                                    "name" : "ClearingSystemIdentification2Choice",
+                                    "fields" : [ {
+                                      "name" : "code",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    }, {
+                                      "name" : "proprietary",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    } ]
+                                  } ],
+                                  "default" : null
+                                }, {
+                                  "name" : "memberIdentification",
+                                  "type" : {
+                                    "type" : "string",
+                                    "avro.java.string" : "String"
+                                  }
+                                } ]
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "name",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "postalAddress",
+                              "type" : [ "null", "PostalAddress24" ],
+                              "default" : null
+                            }, {
+                              "name" : "other",
+                              "type" : [ "null", {
+                                "type" : "record",
+                                "name" : "GenericFinancialIdentification1",
+                                "fields" : [ {
+                                  "name" : "identification",
+                                  "type" : {
+                                    "type" : "string",
+                                    "avro.java.string" : "String"
+                                  }
+                                }, {
+                                  "name" : "schemeName",
+                                  "type" : [ "null", {
+                                    "type" : "record",
+                                    "name" : "FinancialIdentificationSchemeName1Choice",
+                                    "fields" : [ {
+                                      "name" : "code",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    }, {
+                                      "name" : "proprietary",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    } ]
+                                  } ],
+                                  "default" : null
+                                }, {
+                                  "name" : "issuer",
+                                  "type" : [ "null", {
+                                    "type" : "string",
+                                    "avro.java.string" : "String"
+                                  } ],
+                                  "default" : null
+                                } ]
+                              } ],
+                              "default" : null
+                            } ]
+                          }
+                        }, {
+                          "name" : "branchIdentification",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "BranchData3",
+                            "fields" : [ {
+                              "name" : "identification",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "LEI",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "name",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "postalAddress",
+                              "type" : [ "null", "PostalAddress24" ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        } ]
+                      }
+                    } ]
+                  }
+                } ],
+                "default" : null
+              }, {
+                "name" : "previousInstructingAgent1",
+                "type" : [ "null", "BranchAndFinancialInstitutionIdentification6" ],
+                "default" : null
+              }, {
+                "name" : "previousInstructingAgent1Account",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "CashAccount38",
+                  "fields" : [ {
+                    "name" : "identification",
+                    "type" : {
+                      "type" : "record",
+                      "name" : "AccountIdentification4Choice",
+                      "fields" : [ {
+                        "name" : "internationalBankAccountNumber",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      }, {
+                        "name" : "other",
+                        "type" : [ "null", {
+                          "type" : "record",
+                          "name" : "GenericAccountIdentification",
+                          "fields" : [ {
+                            "name" : "identification",
+                            "type" : {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            }
+                          }, {
+                            "name" : "schemeName",
+                            "type" : [ "null", {
+                              "type" : "record",
+                              "name" : "AccountSchemeName1Choice",
+                              "fields" : [ {
+                                "name" : "code",
+                                "type" : [ "null", {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                } ],
+                                "default" : null
+                              }, {
+                                "name" : "proprietary",
+                                "type" : [ "null", {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                } ],
+                                "default" : null
+                              } ]
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "issuer",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          } ]
+                        } ],
+                        "default" : null
+                      } ]
+                    }
+                  }, {
+                    "name" : "type",
+                    "type" : [ "null", {
+                      "type" : "record",
+                      "name" : "CashAccountType2Choice",
+                      "fields" : [ {
+                        "name" : "code",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      }, {
+                        "name" : "proprietary",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      } ]
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "currency",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "name",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "proxy",
+                    "type" : [ "null", {
+                      "type" : "record",
+                      "name" : "ProxyAccountIdentification1",
+                      "fields" : [ {
+                        "name" : "type",
+                        "type" : [ "null", {
+                          "type" : "record",
+                          "name" : "ProxyAccountType1Choice",
+                          "fields" : [ {
+                            "name" : "code",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "proprietary",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          } ]
+                        } ],
+                        "default" : null
+                      }, {
+                        "name" : "identification",
+                        "type" : {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        }
+                      } ]
+                    } ],
+                    "default" : null
+                  } ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "previousInstructingAgent2",
+                "type" : [ "null", "BranchAndFinancialInstitutionIdentification6" ],
+                "default" : null
+              }, {
+                "name" : "previousInstructingAgent2Account",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "previousInstructingAgent3",
+                "type" : [ "null", "BranchAndFinancialInstitutionIdentification6" ],
+                "default" : null
+              }, {
+                "name" : "previousInstructingAgent3Account",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "instructingAgent",
+                "type" : [ "null", "BranchAndFinancialInstitutionIdentification6" ],
+                "default" : null
+              }, {
+                "name" : "instructedAgent",
+                "type" : [ "null", "BranchAndFinancialInstitutionIdentification6" ],
+                "default" : null
+              }, {
+                "name" : "intermediaryAgent1",
+                "type" : [ "null", "BranchAndFinancialInstitutionIdentification6" ],
+                "default" : null
+              }, {
+                "name" : "intermediaryAgent1Account",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "intermediaryAgent2",
+                "type" : [ "null", "BranchAndFinancialInstitutionIdentification6" ],
+                "default" : null
+              }, {
+                "name" : "intermediaryAgent2Account",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "intermediaryAgent3",
+                "type" : [ "null", "BranchAndFinancialInstitutionIdentification6" ],
+                "default" : null
+              }, {
+                "name" : "intermediaryAgent3Account",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "ultimateDebtor",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "PartyIdentification135",
+                  "fields" : [ {
+                    "name" : "name",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "postalAddress",
+                    "type" : [ "null", "PostalAddress24" ],
+                    "default" : null
+                  }, {
+                    "name" : "identification",
+                    "type" : [ "null", "Party38Choice" ],
+                    "default" : null
+                  }, {
+                    "name" : "countryOfResidence",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "contactDetails",
+                    "type" : [ "null", "Contact4" ],
+                    "default" : null
+                  } ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "initiatingParty",
+                "type" : [ "null", "PartyIdentification135" ],
+                "default" : null
+              }, {
+                "name" : "debtor",
+                "type" : "PartyIdentification135"
+              }, {
+                "name" : "debtorAccount",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "debtorAgent",
+                "type" : "BranchAndFinancialInstitutionIdentification6"
+              }, {
+                "name" : "debtorAgentAccount",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "creditorAgent",
+                "type" : "BranchAndFinancialInstitutionIdentification6"
+              }, {
+                "name" : "creditorAgentAccount",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "creditor",
+                "type" : "PartyIdentification135"
+              }, {
+                "name" : "creditorAccount",
+                "type" : [ "null", "CashAccount38" ],
+                "default" : null
+              }, {
+                "name" : "ultimateCreditor",
+                "type" : [ "null", "PartyIdentification135" ],
+                "default" : null
+              }, {
+                "name" : "instructionForCreditorAgent",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "InstructionForCreditorAgent1",
+                    "fields" : [ {
+                      "name" : "code",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "instructionInformation",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    } ]
+                  }
+                } ],
+                "default" : null
+              }, {
+                "name" : "instructionForNextAgent",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "InstructionForNextAgent1",
+                    "fields" : [ {
+                      "name" : "code",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "instructionInformation",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    } ]
+                  }
+                } ],
+                "default" : null
+              }, {
+                "name" : "purpose",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "Purpose2Choice",
+                  "fields" : [ {
+                    "name" : "code",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "proprietary",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  } ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "regulatoryReporting",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "RegulatoryReporting3",
+                    "fields" : [ {
+                      "name" : "debitCreditReportingIndicator",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "authority",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "RegulatoryAuthority2",
+                        "fields" : [ {
+                          "name" : "name",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "country",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "details",
+                      "type" : [ "null", {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "record",
+                          "name" : "StructuredRegulatoryReporting3",
+                          "fields" : [ {
+                            "name" : "type",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "date",
+                            "type" : [ "null", {
+                              "type" : "int",
+                              "logicalType" : "date"
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "country",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "code",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "amount",
+                            "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                            "default" : null
+                          }, {
+                            "name" : "information",
+                            "type" : [ "null", {
+                              "type" : "array",
+                              "items" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            } ],
+                            "default" : null
+                          } ]
+                        }
+                      } ],
+                      "default" : null
+                    } ]
+                  }
+                } ],
+                "default" : null
+              }, {
+                "name" : "tax",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "TaxInformation8",
+                  "fields" : [ {
+                    "name" : "creditor",
+                    "type" : [ "null", {
+                      "type" : "record",
+                      "name" : "TaxParty1",
+                      "fields" : [ {
+                        "name" : "taxIdentification",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      }, {
+                        "name" : "registrationIdentification",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      }, {
+                        "name" : "taxType",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      } ]
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "debtor",
+                    "type" : [ "null", {
+                      "type" : "record",
+                      "name" : "TaxParty2",
+                      "fields" : [ {
+                        "name" : "taxIdentification",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      }, {
+                        "name" : "registrationIdentification",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      }, {
+                        "name" : "taxType",
+                        "type" : [ "null", {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        } ],
+                        "default" : null
+                      }, {
+                        "name" : "authorisation",
+                        "type" : [ "null", {
+                          "type" : "record",
+                          "name" : "TaxAuthorisation1",
+                          "fields" : [ {
+                            "name" : "title",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "name",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          } ]
+                        } ],
+                        "default" : null
+                      } ]
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "administrationZone",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "referenceNumber",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "method",
+                    "type" : [ "null", {
+                      "type" : "string",
+                      "avro.java.string" : "String"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "totalTaxableBaseAmount",
+                    "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                    "default" : null
+                  }, {
+                    "name" : "totalTaxAmount",
+                    "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                    "default" : null
+                  }, {
+                    "name" : "date",
+                    "type" : [ "null", {
+                      "type" : "int",
+                      "logicalType" : "date"
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "sequenceNumber",
+                    "type" : [ "null", "double" ],
+                    "default" : null
+                  }, {
+                    "name" : "record",
+                    "type" : [ "null", {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "record",
+                        "name" : "TaxRecord2",
+                        "fields" : [ {
+                          "name" : "type",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "category",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "categoryDetails",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "debtorStatus",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "certificateIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "formsCode",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "period",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "TaxPeriod2",
+                            "fields" : [ {
+                              "name" : "year",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "type",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "fromToDate",
+                              "type" : [ "null", {
+                                "type" : "record",
+                                "name" : "DatePeriod2",
+                                "fields" : [ {
+                                  "name" : "fromDate",
+                                  "type" : {
+                                    "type" : "int",
+                                    "logicalType" : "date"
+                                  }
+                                }, {
+                                  "name" : "toDate",
+                                  "type" : {
+                                    "type" : "int",
+                                    "logicalType" : "date"
+                                  }
+                                } ]
+                              } ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "taxAmount",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "TaxAmount2",
+                            "fields" : [ {
+                              "name" : "rate",
+                              "type" : [ "null", "double" ],
+                              "default" : null
+                            }, {
+                              "name" : "taxableBaseAmount",
+                              "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                              "default" : null
+                            }, {
+                              "name" : "totalAmount",
+                              "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                              "default" : null
+                            }, {
+                              "name" : "details",
+                              "type" : [ "null", {
+                                "type" : "array",
+                                "items" : {
+                                  "type" : "record",
+                                  "name" : "TaxRecordDetails2",
+                                  "fields" : [ {
+                                    "name" : "period",
+                                    "type" : [ "null", "TaxPeriod2" ],
+                                    "default" : null
+                                  }, {
+                                    "name" : "amount",
+                                    "type" : "ActiveOrHistoricCurrencyAndAmount"
+                                  } ]
+                                }
+                              } ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "additionalInformation",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      }
+                    } ],
+                    "default" : null
+                  } ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "relatedRemittanceInformation",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "RemittanceLocation7",
+                    "fields" : [ {
+                      "name" : "remittanceIdentification",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "remittanceLocationDetails",
+                      "type" : [ "null", {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "record",
+                          "name" : "RemittanceLocationData1",
+                          "fields" : [ {
+                            "name" : "method",
+                            "type" : {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            }
+                          }, {
+                            "name" : "electronicAddress",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          }, {
+                            "name" : "postalAddress",
+                            "type" : [ "null", {
+                              "type" : "record",
+                              "name" : "NameAndAddress16",
+                              "fields" : [ {
+                                "name" : "name",
+                                "type" : {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                }
+                              }, {
+                                "name" : "address",
+                                "type" : "PostalAddress24"
+                              } ]
+                            } ],
+                            "default" : null
+                          } ]
+                        }
+                      } ],
+                      "default" : null
+                    } ]
+                  }
+                } ],
+                "default" : null
+              }, {
+                "name" : "remittanceInformation",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "RemittanceInformation16",
+                  "fields" : [ {
+                    "name" : "unstructured",
+                    "type" : [ "null", {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      }
+                    } ],
+                    "default" : null
+                  }, {
+                    "name" : "structured",
+                    "type" : [ "null", {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "record",
+                        "name" : "StructuredRemittanceInformation16",
+                        "fields" : [ {
+                          "name" : "referredDocumentInformation",
+                          "type" : [ "null", {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "record",
+                              "name" : "ReferredDocumentInformation7",
+                              "fields" : [ {
+                                "name" : "type",
+                                "type" : [ "null", {
+                                  "type" : "record",
+                                  "name" : "ReferredDocumentType4",
+                                  "fields" : [ {
+                                    "name" : "codeOrProprietary",
+                                    "type" : {
+                                      "type" : "record",
+                                      "name" : "ReferredDocumentType3Choice",
+                                      "fields" : [ {
+                                        "name" : "code",
+                                        "type" : [ "null", {
+                                          "type" : "string",
+                                          "avro.java.string" : "String"
+                                        } ],
+                                        "default" : null
+                                      }, {
+                                        "name" : "proprietary",
+                                        "type" : [ "null", {
+                                          "type" : "string",
+                                          "avro.java.string" : "String"
+                                        } ],
+                                        "default" : null
+                                      } ]
+                                    }
+                                  }, {
+                                    "name" : "issuer",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  } ]
+                                } ],
+                                "default" : null
+                              }, {
+                                "name" : "number",
+                                "type" : [ "null", {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                } ],
+                                "default" : null
+                              }, {
+                                "name" : "relatedDate",
+                                "type" : [ "null", {
+                                  "type" : "int",
+                                  "logicalType" : "date"
+                                } ],
+                                "default" : null
+                              }, {
+                                "name" : "lineDetails",
+                                "type" : [ "null", {
+                                  "type" : "array",
+                                  "items" : {
+                                    "type" : "record",
+                                    "name" : "DocumentLineInformation1",
+                                    "fields" : [ {
+                                      "name" : "identification",
+                                      "type" : {
+                                        "type" : "array",
+                                        "items" : {
+                                          "type" : "record",
+                                          "name" : "DocumentLineIdentification1",
+                                          "fields" : [ {
+                                            "name" : "type",
+                                            "type" : [ "null", {
+                                              "type" : "record",
+                                              "name" : "DocumentLineType1",
+                                              "fields" : [ {
+                                                "name" : "codeOrProprietary",
+                                                "type" : {
+                                                  "type" : "record",
+                                                  "name" : "DocumentLineType1Choice",
+                                                  "fields" : [ {
+                                                    "name" : "code",
+                                                    "type" : [ "null", {
+                                                      "type" : "string",
+                                                      "avro.java.string" : "String"
+                                                    } ],
+                                                    "default" : null
+                                                  }, {
+                                                    "name" : "proprietary",
+                                                    "type" : [ "null", {
+                                                      "type" : "string",
+                                                      "avro.java.string" : "String"
+                                                    } ],
+                                                    "default" : null
+                                                  } ]
+                                                }
+                                              }, {
+                                                "name" : "issuer",
+                                                "type" : [ "null", {
+                                                  "type" : "string",
+                                                  "avro.java.string" : "String"
+                                                } ],
+                                                "default" : null
+                                              } ]
+                                            } ],
+                                            "default" : null
+                                          }, {
+                                            "name" : "number",
+                                            "type" : [ "null", {
+                                              "type" : "string",
+                                              "avro.java.string" : "String"
+                                            } ],
+                                            "default" : null
+                                          }, {
+                                            "name" : "relatedDate",
+                                            "type" : [ "null", {
+                                              "type" : "int",
+                                              "logicalType" : "date"
+                                            } ],
+                                            "default" : null
+                                          } ]
+                                        }
+                                      }
+                                    }, {
+                                      "name" : "description",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    }, {
+                                      "name" : "amount",
+                                      "type" : [ "null", {
+                                        "type" : "record",
+                                        "name" : "RemittanceAmount3",
+                                        "fields" : [ {
+                                          "name" : "duePayableAmount",
+                                          "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                                          "default" : null
+                                        }, {
+                                          "name" : "discountAppliedAmount",
+                                          "type" : [ "null", {
+                                            "type" : "array",
+                                            "items" : {
+                                              "type" : "record",
+                                              "name" : "DiscountAmountAndType1",
+                                              "fields" : [ {
+                                                "name" : "type",
+                                                "type" : [ "null", {
+                                                  "type" : "record",
+                                                  "name" : "DiscountAmountType1Choice",
+                                                  "fields" : [ {
+                                                    "name" : "code",
+                                                    "type" : [ "null", {
+                                                      "type" : "string",
+                                                      "avro.java.string" : "String"
+                                                    } ],
+                                                    "default" : null
+                                                  }, {
+                                                    "name" : "proprietary",
+                                                    "type" : [ "null", {
+                                                      "type" : "string",
+                                                      "avro.java.string" : "String"
+                                                    } ],
+                                                    "default" : null
+                                                  } ]
+                                                } ],
+                                                "default" : null
+                                              }, {
+                                                "name" : "amount",
+                                                "type" : "ActiveOrHistoricCurrencyAndAmount"
+                                              } ]
+                                            }
+                                          } ],
+                                          "default" : null
+                                        }, {
+                                          "name" : "creditNoteAmount",
+                                          "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                                          "default" : null
+                                        }, {
+                                          "name" : "taxAmount",
+                                          "type" : [ "null", {
+                                            "type" : "array",
+                                            "items" : {
+                                              "type" : "record",
+                                              "name" : "TaxAmountAndType1",
+                                              "fields" : [ {
+                                                "name" : "type",
+                                                "type" : [ "null", {
+                                                  "type" : "record",
+                                                  "name" : "TaxAmountType1Choice",
+                                                  "fields" : [ {
+                                                    "name" : "code",
+                                                    "type" : [ "null", {
+                                                      "type" : "string",
+                                                      "avro.java.string" : "String"
+                                                    } ],
+                                                    "default" : null
+                                                  }, {
+                                                    "name" : "proprietary",
+                                                    "type" : [ "null", {
+                                                      "type" : "string",
+                                                      "avro.java.string" : "String"
+                                                    } ],
+                                                    "default" : null
+                                                  } ]
+                                                } ],
+                                                "default" : null
+                                              }, {
+                                                "name" : "amount",
+                                                "type" : "ActiveOrHistoricCurrencyAndAmount"
+                                              } ]
+                                            }
+                                          } ],
+                                          "default" : null
+                                        }, {
+                                          "name" : "adjustmentAmountAndReason",
+                                          "type" : [ "null", {
+                                            "type" : "array",
+                                            "items" : {
+                                              "type" : "record",
+                                              "name" : "DocumentAdjustment1",
+                                              "fields" : [ {
+                                                "name" : "amount",
+                                                "type" : "ActiveOrHistoricCurrencyAndAmount"
+                                              }, {
+                                                "name" : "creditDebitIndicator",
+                                                "type" : [ "null", {
+                                                  "type" : "string",
+                                                  "avro.java.string" : "String"
+                                                } ],
+                                                "default" : null
+                                              }, {
+                                                "name" : "reason",
+                                                "type" : [ "null", {
+                                                  "type" : "string",
+                                                  "avro.java.string" : "String"
+                                                } ],
+                                                "default" : null
+                                              }, {
+                                                "name" : "additionalInformation",
+                                                "type" : [ "null", {
+                                                  "type" : "string",
+                                                  "avro.java.string" : "String"
+                                                } ],
+                                                "default" : null
+                                              } ]
+                                            }
+                                          } ],
+                                          "default" : null
+                                        }, {
+                                          "name" : "remittedAmount",
+                                          "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                                          "default" : null
+                                        } ]
+                                      } ],
+                                      "default" : null
+                                    } ]
+                                  }
+                                } ],
+                                "default" : null
+                              } ]
+                            }
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "referredDocumentAmount",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "RemittanceAmount2",
+                            "fields" : [ {
+                              "name" : "duePayableAmount",
+                              "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                              "default" : null
+                            }, {
+                              "name" : "discountAppliedAmount",
+                              "type" : [ "null", {
+                                "type" : "array",
+                                "items" : "DiscountAmountAndType1"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "creditNoteAmount",
+                              "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                              "default" : null
+                            }, {
+                              "name" : "taxAmount",
+                              "type" : [ "null", {
+                                "type" : "array",
+                                "items" : "TaxAmountAndType1"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "adjustmentAmountAndReason",
+                              "type" : [ "null", {
+                                "type" : "array",
+                                "items" : "DocumentAdjustment1"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "remittedAmount",
+                              "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "creditorReferenceInformation",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "CreditorReferenceInformation2",
+                            "fields" : [ {
+                              "name" : "type",
+                              "type" : [ "null", {
+                                "type" : "record",
+                                "name" : "CreditorReferenceType2",
+                                "fields" : [ {
+                                  "name" : "codeOrProprietary",
+                                  "type" : {
+                                    "type" : "record",
+                                    "name" : "CreditorReferenceType1Choice",
+                                    "fields" : [ {
+                                      "name" : "code",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    }, {
+                                      "name" : "proprietary",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    } ]
+                                  }
+                                }, {
+                                  "name" : "issuer",
+                                  "type" : [ "null", {
+                                    "type" : "string",
+                                    "avro.java.string" : "String"
+                                  } ],
+                                  "default" : null
+                                } ]
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "reference",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "invoicer",
+                          "type" : [ "null", "PartyIdentification135" ],
+                          "default" : null
+                        }, {
+                          "name" : "invoicee",
+                          "type" : [ "null", "PartyIdentification135" ],
+                          "default" : null
+                        }, {
+                          "name" : "taxRemittance",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "TaxInformation7",
+                            "fields" : [ {
+                              "name" : "creditor",
+                              "type" : [ "null", "TaxParty1" ],
+                              "default" : null
+                            }, {
+                              "name" : "debtor",
+                              "type" : [ "null", "TaxParty2" ],
+                              "default" : null
+                            }, {
+                              "name" : "ultimateDebtor",
+                              "type" : [ "null", "TaxParty2" ],
+                              "default" : null
+                            }, {
+                              "name" : "administrationZone",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "referenceNumber",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "method",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "totalTaxableBaseAmount",
+                              "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                              "default" : null
+                            }, {
+                              "name" : "totalTaxAmount",
+                              "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                              "default" : null
+                            }, {
+                              "name" : "date",
+                              "type" : [ "null", {
+                                "type" : "int",
+                                "logicalType" : "date"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "sequenceNumber",
+                              "type" : [ "null", "double" ],
+                              "default" : null
+                            }, {
+                              "name" : "record",
+                              "type" : [ "null", {
+                                "type" : "array",
+                                "items" : "TaxRecord2"
+                              } ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "garnishmentRemittance",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "Garnishment3",
+                            "fields" : [ {
+                              "name" : "type",
+                              "type" : {
+                                "type" : "record",
+                                "name" : "GarnishmentType1",
+                                "fields" : [ {
+                                  "name" : "codeOrProprietary",
+                                  "type" : {
+                                    "type" : "record",
+                                    "name" : "GarnishmentType1Choice",
+                                    "fields" : [ {
+                                      "name" : "code",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    }, {
+                                      "name" : "proprietary",
+                                      "type" : [ "null", {
+                                        "type" : "string",
+                                        "avro.java.string" : "String"
+                                      } ],
+                                      "default" : null
+                                    } ]
+                                  }
+                                }, {
+                                  "name" : "issuer",
+                                  "type" : [ "null", {
+                                    "type" : "string",
+                                    "avro.java.string" : "String"
+                                  } ],
+                                  "default" : null
+                                } ]
+                              }
+                            }, {
+                              "name" : "garnishee",
+                              "type" : [ "null", "PartyIdentification135" ],
+                              "default" : null
+                            }, {
+                              "name" : "garnishmentAdministrator",
+                              "type" : [ "null", "PartyIdentification135" ],
+                              "default" : null
+                            }, {
+                              "name" : "referenceNumber",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "date",
+                              "type" : [ "null", {
+                                "type" : "int",
+                                "logicalType" : "date"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "remittedAmount",
+                              "type" : [ "null", "ActiveOrHistoricCurrencyAndAmount" ],
+                              "default" : null
+                            }, {
+                              "name" : "familyMedicalInsuranceIndicator",
+                              "type" : [ "null", "boolean" ],
+                              "default" : null
+                            }, {
+                              "name" : "employeeTerminationIndicator",
+                              "type" : [ "null", "boolean" ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "additionalRemittanceInformation",
+                          "type" : [ "null", {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            }
+                          } ],
+                          "default" : null
+                        } ]
+                      }
+                    } ],
+                    "default" : null
+                  } ]
+                } ],
+                "default" : null
+              }, {
+                "name" : "supplementaryData",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "SupplementaryData",
+                    "doc" : "10x Supplementary Data Schema",
+                    "fields" : [ {
+                      "name" : "placeAndName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "envelope",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "SupplementaryDataEnvelope",
+                        "fields" : [ {
+                          "name" : "supplementaryDataSchema",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "paymentCategory",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "sequenceType",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "messageTraceIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "instructionReceiptIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "instructionTraceIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "transactionTraceIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "routingDestination",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "schemeName",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "partyKey",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "schema",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "paymentTags",
+                          "type" : [ "null", {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            }
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "technicalInputChannel",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      }
+                    } ]
+                  }
+                } ],
+                "default" : null
+              } ]
+            }
+          }
+        }, {
+          "name" : "supplementaryData",
+          "type" : [ "null", {
+            "type" : "array",
+            "items" : "SupplementaryData"
+          } ],
+          "default" : null
+        } ]
+      }
+    } ]
+  }

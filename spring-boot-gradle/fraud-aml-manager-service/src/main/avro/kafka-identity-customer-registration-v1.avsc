@@ -1,0 +1,36 @@
+{
+  "type": "record",
+  "name": "CustomerRegistration",
+  "namespace": "com.tenx.security.forgerockfacade.resource",
+  "fields": [
+    {
+      "name": "party_key",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "passcode_provided",
+      "type": "boolean"
+    },
+    {
+      "name": "password_provided",
+      "type": "boolean"
+    },
+    {
+      "name": "device_id",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    }
+  ]
+}

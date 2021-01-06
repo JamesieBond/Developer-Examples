@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="10xlogging-appender.xml"/>
+
+    <root level="info">
+        <appender-ref ref="10XSTANDARD"/>
+    </root>
+
+</configuration>

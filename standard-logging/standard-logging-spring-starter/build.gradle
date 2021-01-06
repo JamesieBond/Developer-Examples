@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(':standard-logging-spring')
+    implementation libs.springBootStarter
+    implementation libs.springWebFlux
+    implementation libs.feignSlf4j
+    implementation libs.okHttp3
+}

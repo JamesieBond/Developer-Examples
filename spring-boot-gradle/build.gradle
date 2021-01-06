@@ -1,0 +1,26 @@
+plugins {
+    id 'idea'
+}
+
+group = 'com.jamesspencer.spring.gradle'
+
+ext {
+    set('springCloudVersion', 'Hoxton.RELEASE')
+    jacksonVersion = "2.10.5"
+    apacheKafkaVersion = "2.3.1"
+    set('hibernate.version', '5.4.24.Final')
+}
+
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        maven { url "http://repo.mylti3gh7p4x.net/repository/maven-releases/" }
+        maven { url "http://repo.mylti3gh7p4x.net/repository/maven-public/" }
+        maven { url 'http://nexus.internal.10x.mylti3gh7p4x.net/repository/jcenter/' }
+        maven{ url 'http://nexus.internal.10x.mylti3gh7p4x.net/repository/maven-central/' }
+        maven { url "http://nexus.internal.10x.mylti3gh7p4x.net/repository/maven-releases/" }
+
+    }
+}

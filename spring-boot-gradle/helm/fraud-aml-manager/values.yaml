@@ -1,0 +1,35 @@
+microservice:
+  replicaCount: 1
+  namespace: fraud
+  nameOverride: fraudamlmanager
+  image:
+    repository: fraud-aml-manager
+    tag: __TAG__
+  resources:
+    limits:
+      memory: 1.5Gi
+    requests:
+      memory: 1Gi
+  cockroachdb:
+    user: fraudamlmanageruser
+    dbname: fraudamlmanagerdb
+  kafka:
+    readTopics:
+      - subscription-event-v3
+      - party-event-v3
+      - party-event-business-v2
+      - device-profiling-event-v1
+      - payees-event-v1
+      - casegovernor-event-v1
+      - kafka-identity-customer-registration-v1
+      - identity-login-v1
+      - identity-step-up-v1
+      - individual-party-v2
+      - identity-account-reset-notification-v1
+      - payments-notifications-topic
+      - fps-fraud-check-request-v2
+      - payments-core-credit-transfer-fraud-check-request-v1
+      - payments-cct-initiation-completed-event-v1
+    writeTopics:
+      - external-risk-score-event
+      - fps-fraud-check-response-v2

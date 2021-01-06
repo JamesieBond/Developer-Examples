@@ -1,0 +1,36 @@
+= Overview
+
+Fraud AML Manager (_FAM_) has the responsibility of making financial crime checks on different domain events.
+The checks are executed synchronously through API calls or asynchronously through kafka messages.
+
+FAM stores data coming from events in the platform and uses it to provide data to 3rd party system that run fincrime
+checks.
+
+
+```
+                         +-------------+
+                         |             |
+                         |  Payment    |            +---------+
+                         |  Decision   |            |         |
+                         |  Framework  |            |  Kafka  |
+                         |             |            |         |
+                         +------+------+            +----+----+
+                                |                        |
+                                |                        |
+                     +----------+----------+             |
+                     |                     |             |
+                     |                     +-------------+
+                     |  Fraud AML Manager  |
+        +------------+                     +-------------+
+        |            |                     |             |
+        |            +----------+----------+             |
+        |                       |                        |
+        |                       |                        |
++---------------+       +----------------+       +----------------+
+|       +       |       |       |        |       |       +        |
+|  Transaction  |       |  SIRA Adapter  |       |  ThreatMetrix  |
+|  Monitoring   |       |  Application   |       |  Adapter       |
+|  Adapter      |       |  Fraud         |       |                |
+|               |       |                |       |                |
++---------------+       +----------------+       +----------------+
+```

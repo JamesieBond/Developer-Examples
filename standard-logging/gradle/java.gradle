@@ -1,0 +1,11 @@
+apply plugin: 'io.freefair.lombok'
+apply plugin: 'jacoco'
+apply plugin: 'java-library'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+lombok {
+  config['lombok.anyConstructor.addConstructorProperties'] = 'true'
+  config['lombok.addLombokGeneratedAnnotation'] = 'true'
+}

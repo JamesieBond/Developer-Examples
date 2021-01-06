@@ -1,0 +1,9 @@
+# Generated files
+.swagger-codegen
+gradle
+out
+src/main/java/com/tenx/fraudamlmanager/payments/core/credittransfer/domain/model
+src/main/java/com/tenx/fraudamlmanager/payments/core/credittransfer/domain/RFC3339DateFormat.java
+src/main/java/org/openapitools/configuration
+.swagger-codegen-ignore
+.openapi-generator

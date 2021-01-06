@@ -1,0 +1,176 @@
+spring:
+  jackson:
+    deserialization:
+      READ_UNKNOWN_ENUM_VALUES_AS_NULL: true
+  kafka:
+    listener:
+      missing-topics-fatal: false
+    bootstrap-servers: "spring.kafka.bootstrap-servers"
+    properties:
+      schema.registry.url: http://mock
+    consumer:
+      group-id: ${KAFKA_CONSUMER_GROUP_NAME:"fraud-group"}
+      subscription-event-v3-topic: subscription-event-v3
+      party-event-v3-topic: party-event-v3
+      party-event-v3-encrypted-topic: party-event-v3-enc
+      party-event-business-v2-topic: party-event-business-v2
+      device-profiling-event-topic: device-profiling-event-v1
+      payee-event-v1-topic: payees-event-v1
+      casegovernor-event-v1-topic: casegovernor-event-v1
+      casegovernor-event-v2-topic: casegovernor-event-v2
+      kafka-identity-customer-registration-v1-topic: kafka-identity-customer-registration-v1
+      identity-login-v1-topic: identity-login-v1
+      identity-step-up-v1-topic: identity-step-up-v1
+      identity-account-reset-notification-topic: identity-account-reset-notification-v1
+      individual-party-v2-topic: individual-party-v2
+      individual-party-v2-encrypted-topic: individual-party-v2-enc
+      payments-notifications-topic: payments-notifications-topic
+      fps-fraud-check-request-event-topic: fps-fraud-check-request-v2
+      payments-core-credit-transfer-fraud-check-request-topic: payments-core-credit-transfer-fraud-check-request-v1
+      payments-cct-initiation-completed-topic: payments-cct-initiation-completed-event-v1
+      enable-auto-commit: false
+      properties:
+        key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value.deserializer: com.tenx.fraudamlmanager.CustomKafkaAvroDeserializer
+        specific.avro.reader: true
+    producer:
+      external-risk-score-v1-topic: external-risk-score-event
+      payments-blocked-topic: payments-blocked
+      fps-fraud-check-response-event-topic: fps-fraud-check-response-v2
+      payments-core-fraud-check-response-topic: payments-core-fraud-check-response-v1
+      properties:
+        key.serializer: org.apache.kafka.common.serialization.StringSerializer
+        value.serializer: com.tenx.fraudamlmanager.CustomKafkaAvroSerializer
+    security:
+      protocol: SASL_SSL
+      kmsKeys: app/key
+      region: eu-west-1
+      keysProviderClass: "com.tenx.kafka.provider.CachingAwsKmsProvider"
+      providerExpirySeconds: 360 # - (client itself is cached so this is expiration of aws kms client)
+      keysCache:
+        maxSize: 10
+        maxAgeSeconds: 360
+        maxMessage: 1000
+    ssl.endpoint.identification.algorithm: https
+    sasl:
+      mechanism: PLAIN
+      api:
+        key: apiKey
+        secret: apiSecret
+      jaas:
+        config: org.apache.kafka.common.security.plain.PlainLoginModule required username='${KAFKA_API_KEY}' password='${KAFKA_API_SECRET}';
+    request:
+      timeout:
+        ms: 20000
+    retry:
+      backoff:
+        ms: 500
+
+  sleuth:
+    propagation-keys: authorization
+
+  datasource:
+    url: jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+management:
+  endpoints:
+    web:
+      base-path: "/"
+      exposure:
+        include: prometheus, info, metrics, threaddump, health
+      path-mapping:
+        metrics: old-metrics
+        prometheus: /metrics #prometheus looks at /metrics by default when scraping for metrics
+  endpoint:
+    health:
+      show-details: always
+      defaults.enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+DISABLE_CASE_OUTCOME_EVENT: false
+
+SEND_NON_PAYMENT_EVENT: ${SEND_NON_PAYMENTS_EVENT:true}
+
+transactionmonitoring:
+  url: http://localhost:1234
+  enableMock: false
+  featurespace: true
+
+transactionmanager:
+  url: http://localhost:1234
+  enableMock: false
+
+threatmetrixadapter:
+  url: http://localhost:1234
+  enableMock: false
+  fields: ${TMX_FIELDS:device_key_id,device_id,time_zone,policy_score,dns_ip_geo,event_type,dns_ip_longitude,dns_ip_latitude,jb_root,session_id,device_first_seen,agent_health_status}
+
+casegovernor:
+  url: http://localhost:1234
+
+feedzaimanager:
+  url: http://localhost:1234
+  enableMock: false
+
+
+feign:
+  client:
+    config:
+      transaction-monitoring-adapter:
+        connectTimeout: 5000
+        readTimeout: 5000
+      transaction-monitoring-adapter-v3:
+        connectTimeout: 5000
+        readTimeout: 5000
+      transaction-manager:
+        connectTimeout: 5000
+        readTimeout: 5000
+      feedzai-manager:
+        connectTimeout: 5000
+        readTimeout: 5000
+  retry:
+    config:
+      global:
+        period: 500
+        maxPeriod: 5000
+        maxAttempts: 3
+      transaction-monitoring-adapter:
+        period: 500
+        maxPeriod: 5000
+        maxAttempts: 3
+      transaction-monitoring-adapter-v3:
+        period: 500
+        maxPeriod: 5000
+        maxAttempts: 3
+      transaction-manager:
+        period: 1000
+        maxPeriod: 1000
+        maxAttempts: 5
+      feedzai-manager:
+        period: 1000
+        maxPeriod: 1000
+        maxAttempts: 5
+      case-governor:
+        period: 500
+        maxPeriod: 5000
+        maxAttempts: 3
+      threatmetrix-adapter:
+        period: 500
+        maxPeriod: 5000
+        maxAttempts: 3
+
+10xlogging:
+  maskPII: true
+  suppressForSqlContaining:
+    - "scheduled_tasks"
+    - "message_outbox"
+  inboundWebFilterIncluding: "^/v\\d+/*"

@@ -1,0 +1,36 @@
+logging:
+  level:
+    com.tenx.fraudamlmanager: debug
+
+server:
+  port: 8090
+
+transactionmonitoring:
+  url: ${TRANSACTIONMONITORING_URL}
+
+feedzaimanager:
+  url: ${FEEDZAIMANAGER_URL}
+
+threatmetrixadapter:
+  url: http://localhost:9079
+
+casegovernor:
+  url: https://casegovernor-interaction.svc.solution-testblue.mylti3gh7p4x.net
+
+SEND_NON_PAYMENT_EVENT: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:26257/frauddb?sslmode=disable&gssEncMode=allow
+    username: root
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQL94Dialect
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      schema.registry.url: http://localhost:8091
+

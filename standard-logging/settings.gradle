@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        maven { url "http://nexus.internal.10x.mylti3gh7p4x.net/repository/maven-public/" }
+    }
+}
+
+rootProject.name = 'standard-logging'
+include 'standard-logging-spring'
+include 'standard-logging-spring-starter'
+

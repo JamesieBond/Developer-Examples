@@ -1,0 +1,94 @@
+plugins {
+    id 'idea'
+    id 'org.springframework.boot' version '2.2.10.RELEASE'
+    id "au.com.dius.pact" version "3.5.19"
+}
+
+group = 'com.tenx.fraudamlmanager'
+
+apply plugin: 'io.spring.dependency-management'
+
+
+bootRun.enabled = false
+bootJar.enabled = false
+
+
+ext.pactTestVersion = { ->
+    if (System.getenv().containsKey('PACT_TEST_VERSION')) {
+        return System.getenv('PACT_TEST_VERSION')
+    } else {
+        return 'local-' + String.valueOf(new Date().getTime())
+
+    }
+}
+
+ext.pactTestVersionUrl = { ->
+    if (System.getenv().containsKey('PACT_TEST_VERSION')) {
+        return 'pactbroker-pact.svc.tooling.mylti3gh7p4x.net/'
+    } else {
+        return 'localhost'
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    testImplementation project(':fraud-aml-manager-service')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    testImplementation 'org.springframework.cloud:spring-cloud-starter-openfeign:2.2.2.RELEASE'
+    testCompile 'org.mockito:mockito-core'
+
+    // Kafka test dependencies
+    testImplementation "org.springframework.kafka:spring-kafka:2.3.1.RELEASE"
+    testImplementation('org.springframework.kafka:spring-kafka-test') {
+        exclude module: 'kafka_2.12'
+    }
+    testImplementation "org.apache.kafka:kafka-clients:$apacheKafkaVersion:test"
+    testImplementation "org.apache.kafka:kafka_2.12:$apacheKafkaVersion"
+    testImplementation "org.apache.kafka:kafka_2.12:$apacheKafkaVersion:test"
+    testImplementation "io.confluent:kafka-avro-serializer:5.4.0"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.5.0'
+    testImplementation group: 'au.com.dius', name: 'pact-jvm-consumer-junit5_2.12', version: '3.5.24'
+    testImplementation group: 'au.com.dius', name: 'pact-jvm-provider-junit5_2.12', version: '3.5.24'
+    testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.5.0'
+    testImplementation 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'pactbroker.host', pactTestVersionUrl()
+    systemProperty 'pactbroker.port', '80'
+    systemProperty 'pactbroker.protocol', 'http'
+    systemProperty 'pact.provider.version', pactTestVersion()
+    systemProperty 'pact.verifier.publishResults', 'true'
+    systemProperty 'pact.rootDir', "${buildDir}/pacts"
+
+}
+
+pact {
+    publish {
+        pactBrokerUrl = 'http://' + pactTestVersionUrl()
+        version = pactTestVersion()
+    }
+    serviceProviders {
+        'fraudamlmanager.fraud' {
+        }
+    }
+}
+
+pactPublish.dependsOn(check)

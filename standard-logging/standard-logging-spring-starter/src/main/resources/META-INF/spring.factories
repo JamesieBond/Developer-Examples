@@ -1,0 +1,8 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.tenx.logging.config.common.CommonLogAutoConfig,\
+com.tenx.logging.config.servlet.FeignClientLogAutoConfig,\
+com.tenx.logging.config.servlet.RestTemplateLogAutoConfig,\
+com.tenx.logging.config.reactive.WebClientLogAutoConfig
+org.springframework.context.ApplicationListener=\
+com.tenx.logging.config.common.P6SpyLogAutoConfig

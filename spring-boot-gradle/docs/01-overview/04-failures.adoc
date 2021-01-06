@@ -1,0 +1,23 @@
+= Dependency Failures
+
+== Apache Kafka
+The application stays alive during Kafka downtime while trying to reconnect. It will keep waiting until
+the connecction succeed.
+
+=== Transaction Monitoring Adapter (TMA)
+FAM will return a 500 error when TMA is down. TMA is required to execute financial crime check on
+payments.
+What to do in case TMA is not reachable is still to be decided.
+
+=== SIRA Application Fraud (SA)
+FAM will return a 500 error when SA is down. SA is required to execute application fraud checks
+for onboarding.
+What to do in case SA is not reachable is still to be decided.
+
+=== ThreatMetrix Adapter (TMXA)
+TMXA pushes updates on the mobile profiling data to FAM which will cache the data and use it
+when required for fraud checks.
+If TMXA is down FAM will still work using the last version of the data available.
+Whether the data cached is sufficient or not it will be based on the fraud check to execute.
+If the cached data is not sufficient for the fraud check to execute FAM will return a 500 error
+with a specific error code.

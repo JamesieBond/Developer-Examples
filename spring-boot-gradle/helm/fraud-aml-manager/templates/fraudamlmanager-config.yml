@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fraudamlmanager-config
+  namespace: fraud
+  labels:
+    app: fraudamlmanager
+data:
+  TRANSACTIONMONITORING_URL: {{ .Values.application.config.TRANSACTIONMONITORING_URL }}
+  TRANSACTIONMONITORING_ENABLEMOCK: {{ .Values.application.config.TRANSACTIONMONITORING_ENABLEMOCK | quote }}
+  FEEDZAIMANAGER_URL: {{ .Values.application.config.FEEDZAIMANAGER_URL }}
+  FEEDZAIMANAGER_ENABLEMOCK: {{ .Values.application.config.FEEDZAIMANAGER_ENABLEMOCK | quote }}
+  {{- if .Values.application.config.SEND_NON_PAYMENTS_EVENT }}
+  SEND_NON_PAYMENTS_EVENT: {{ .Values.application.config.SEND_NON_PAYMENTS_EVENT | quote}}
+  {{- end}}
+  {{- if .Values.application.config.LOG_LEVEL }}
+  LOG_LEVEL: {{ .Values.application.config.LOG_LEVEL }}
+  {{- end}}
+  {{- if .Values.application.config.DISABLE_CASE_OUTCOME_EVENT }}
+  DISABLE_CASE_OUTCOME_EVENT: {{ .Values.application.config.DISABLE_CASE_OUTCOME_EVENT | quote }}
+  {{- end}}
+  {{- if .Values.application.config.FPS_FINCRIME_CHECK_OUTCOME_TO }}
+  FPS_FINCRIME_CHECK_OUTCOME_TO: {{ .Values.application.config.FPS_FINCRIME_CHECK_OUTCOME_TO }}
+  {{- end}}
+  {{- if .Values.application.config.CASE_CREATION_TYPE }}
+  CASE_CREATION_TYPE: {{ .Values.application.config.CASE_CREATION_TYPE }}
+  {{- end}}
+  {{- if .Values.application.config.TMX_FIELDS }}
+  TMX_FIELDS: {{ .Values.application.config.TMX_FIELDS }}
+  {{- end}}
+  {{- if .Values.application.config.LOGGING_INBOUND_LOGGER }}
+  LOGGING_INBOUND_LOGGER: {{ .Values.application.config.LOGGING_INBOUND_LOGGER }}
+  {{- end}}
+  {{- if .Values.application.config.LOGGING_OUTBOUND_LOGGER }}
+  LOGGING_OUTBOUND_LOGGER: {{ .Values.application.config.LOGGING_OUTBOUND_LOGGER }}
+  {{- end}}
+  {{- if .Values.application.config.LOGGING_DATABASE_LOGGER }}
+  LOGGING_DATABASE_LOGGER: {{ .Values.application.config.LOGGING_DATABASE_LOGGER }}
+  {{- end}}
+  {{- if .Values.application.config.SPRING_KAFKA_SECURITY_KMSKEYS }}
+  SPRING_KAFKA_SECURITY_KMSKEYS: {{ .Values.application.config.SPRING_KAFKA_SECURITY_KMSKEYS }}
+  {{ - end }}
+  {{- if .Values.application.config.SPRING_KAFKA_SECURITY_REGION }}
+  SPRING_KAFKA_SECURITY_REGION: {{ .Values.application.config.SPRING_KAFKA_SECURITY_REGION }}
+  {{ - end } }
+
+

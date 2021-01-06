@@ -1,0 +1,139 @@
+{
+   "type":"record",
+   "name":"CaseEventV2",
+   "namespace":"com.tenx.dub.casegovernor.event.v1",
+   "fields":[
+      {
+         "name":"event_type",
+         "type":[
+            "null",
+            {
+               "type":"string",
+               "avro.java.string":"String"
+            }
+         ],
+         "doc":"A valid enum caseType like Create, Update",
+         "default":null
+      },
+      {
+         "name":"tenantKey",
+         "type":[
+            "null",
+            {
+               "type":"string",
+               "avro.java.string":"String"
+            }
+         ],
+         "doc":"Valid tenantKey :10000",
+         "default":null
+      },
+      {
+         "name":"partyKey",
+         "type":{
+            "type":"string",
+            "avro.java.string":"String"
+         },
+         "doc":"Valid partyKey in UUID format like 94310d52-bf4e-49d7-abfd-cd7a3dce07ce"
+      },
+      {
+         "name":"tenxCaseId",
+         "type":{
+            "type":"string",
+            "avro.java.string":"String"
+         },
+         "doc":"Valid tenxCaseId in UUID format like 2888aa17-200e-4883-aa3a-65b8147ff294"
+      },
+      {
+         "name":"caseType",
+         "type":[
+            "null",
+            {
+               "type":"string",
+               "avro.java.string":"String"
+            }
+         ],
+         "doc":"A valid enum caseType like ON_BOARDING_EXCEPTION_INDIVIDUAL_FRAUDULENT, QUERY_TRANSACTION, FRAUD_EXCEPTION, ONBOARDING_EXCEPTION",
+         "default":null
+      },
+      {
+         "name":"attributes",
+         "type":{
+            "type":"array",
+            "items":{
+               "type":"record",
+               "name":"Attribute",
+               "fields":[
+                  {
+                     "name":"attributeName",
+                     "type":{
+                        "type":"string",
+                        "avro.java.string":"String"
+                     },
+                     "doc":"attributes to a case like Refund Type, Refund Amount, Ex-Gratia Amount"
+                  },
+                  {
+                     "name":"attributeValue",
+                     "type":{
+                        "type":"string",
+                        "avro.java.string":"String"
+                     },
+                     "doc":"values associated to above attribute names"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "name":"status",
+         "type":[
+            "null",
+            {
+               "type":"string",
+               "avro.java.string":"String"
+            }
+         ],
+         "doc":"one of the following enums NEW, PENDING, IN_PROGRESS, ESCALATED, FAILED, CLOSED",
+         "default":null
+      },
+      {
+         "name":"outcome",
+         "type":[
+            "null",
+            {
+               "type":"string",
+               "avro.java.string":"String"
+            }
+         ],
+         "doc":"Actual Case outcome from CRM",
+         "default":null
+      },
+      {
+         "name":"colleagueId",
+         "type":[
+            "null",
+            {
+               "type":"string",
+               "avro.java.string":"String"
+            }
+         ],
+         "doc":"A valid colleagueId like abcdpq786rxyzj1236",
+         "default":null
+      },
+      {
+         "name":"createdTimeStamp",
+         "type":{
+            "type":"string",
+            "avro.java.string":"String"
+         },
+         "doc":"message created time in ISO8601 format"
+      },
+      {
+         "name":"updatedTimeStamp",
+         "type":{
+            "type":"string",
+            "avro.java.string":"String"
+         },
+         "doc":"message created time in ISO8601 format"
+      }
+   ]
+}

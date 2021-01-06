@@ -1,0 +1,31 @@
+= On Call Runbook - 1.9
+:toc:
+
+== Helper tools
+
+[cols="2"]
+|===
+|Grafana
+|TODO
+
+|Prometheus queries
+|TODO
+
+| Logs
+| TODO
+|===
+
+
+== Troubleshooting
+
+=== Payment check endpoints return 500 response
+
+[cols="2"]
+|===
+| Observer
+| `payment-decision-framework` while checking payment fraud
+
+| Possible causes
+| `Transaction Monitoring Adapter` is returning a 500 error. This might happen if the transaction monitoring 3rd is
+  down. The error handling will be improved when the integration with the 3rd will start.
+|===

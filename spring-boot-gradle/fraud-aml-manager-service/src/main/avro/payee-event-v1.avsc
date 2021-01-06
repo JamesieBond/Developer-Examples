@@ -1,0 +1,311 @@
+[
+  {
+    "type": "record",
+    "name": "PayeeAccount",
+    "namespace": "com.tenx.payeemanager.event.payee",
+    "fields": [
+      {
+        "name": "id",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "identification",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "identificationType",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "name",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "PayeesCreate",
+    "namespace": "com.tenx.payeemanager.event.payee",
+    "fields": [
+      {
+        "name": "partyKey",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "payeeId",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "payeeName",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "category",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "reference",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "payerPartyKey",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "createdDateTime",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "ISO8601 formatted string"
+      },
+      {
+        "name": "updatedDateTime",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "ISO8601 formatted string"
+      },
+      {
+        "name": "payerPartyStatus",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "payerPartyType",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "payeeAccounts",
+        "type": [
+          "null",
+          {
+            "type": "array",
+            "items": "PayeeAccount"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "AccountDelete",
+    "namespace": "com.tenx.payeemanager.event.payee",
+    "fields": [
+      {
+        "name": "accountId",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "identification",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "identificationType",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "name",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "payeeId",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "headerPartyKey",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "PayeesDelete",
+    "namespace": "com.tenx.payeemanager.event.payee",
+    "fields": [
+      {
+        "name": "partyKey",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "payeeId",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "payeeName",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "category",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "reference",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "payerPartyKey",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "createdDateTime",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "ISO8601 formatted string"
+      },
+      {
+        "name": "updatedDateTime",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "ISO8601 formatted string"
+      },
+      {
+        "name": "payerPartyStatus",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "payerPartyType",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "payeeAccounts",
+        "type": [
+          "null",
+          {
+            "type": "array",
+            "items": "PayeeAccount"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "PayeesUpdate",
+    "namespace": "com.tenx.payeemanager.event.payee",
+    "fields": [
+      {
+        "name": "payeeId",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "accountId",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        },
+        "doc": "String representation of a UUID"
+      },
+      {
+        "name": "name",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      },
+      {
+        "name": "headerPartyKey",
+        "type": {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      }
+    ]
+  }
+]

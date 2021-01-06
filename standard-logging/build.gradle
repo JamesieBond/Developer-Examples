@@ -1,0 +1,55 @@
+plugins {
+    id 'idea'
+    id 'io.freefair.lombok' version '5.3.0'
+    id 'java-library'
+    id 'maven-publish'
+    id 'org.sonarqube' version '3.0'
+    id 'pl.allegro.tech.build.axion-release' version '1.11.0'
+}
+
+apply from: "${rootDir}/gradle/dependencies.gradle"
+apply from: "${rootDir}/gradle/sonarqube.gradle"
+
+defaultTasks('clean', 'build')
+
+scmVersion {
+    useHighestVersion = true
+    tag {
+        prefix = ''
+    }
+}
+
+allprojects {
+    project.version = scmVersion.version
+    group properties['group']
+    repositories {
+        mavenLocal()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "http://nexus.internal.10x.mylti3gh7p4x.net/repository/maven-public/" }
+        maven { url "http://nexus.internal.10x.mylti3gh7p4x.net/repository/maven-releases/" }
+        maven { url "http://nexus.internal.10x.mylti3gh7p4x.net/repository/third-party/" }
+    }
+}
+
+subprojects {
+    apply from: "${rootDir}/gradle/java.gradle"
+    apply from: "${rootDir}/gradle/publish.gradle"
+
+    dependencies {
+        testImplementation libs.springBootStarterTest
+        testImplementation libs.junitJupiterApi
+        testImplementation libs.junitJupiterEngine
+        testImplementation libs.junitJupiterParams
+        testImplementation libs.mockitoInline
+        testImplementation(libs.mockitoJunitJupiter) {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+            exclude group: 'org.springframework', module: 'spring-webmvc'
+            exclude group: 'org.springframework', module: 'spring-web'
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+        testLogging { events "passed", "skipped", "failed" }
+    }
+}

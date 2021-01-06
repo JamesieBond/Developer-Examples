@@ -1,0 +1,45 @@
+ext {
+
+    versions = [
+            springBootVersion      : "2.3.1.RELEASE",
+            springVersion          : "5.1.9.RELEASE",
+            lombokVersion          : "1.18.12",
+            p6spyVersion           : "1.6.2",
+            logstashVersion        : "6.1",
+            sonarQubeVersion       : "2.7",
+            openFeignVersion       : "10.10.1",
+            servletApiVersion      : "3.1.0",
+            janino                 : "3.0.6",
+            aspectj                : "1.9.6",
+            okHttp3                : "11.0",
+
+            //test libs
+            junit5                 : "5.2.0",
+            mockito                : "3.4.0"
+    ]
+
+
+    libs = [
+            springBootStarter      : "org.springframework.boot:spring-boot-starter:$versions.springBootVersion",
+            springBootStarterWeb   : "org.springframework.boot:spring-boot-starter-web:$versions.springBootVersion",
+            springWebFlux          : "org.springframework:spring-webflux:$versions.springVersion",
+            servletApi             : "javax.servlet:javax.servlet-api:$versions.servletApiVersion",
+            p6spyStarter           : "com.github.gavlyukovskiy:p6spy-spring-boot-starter:$versions.p6spyVersion",
+            logstashLogbackEncoder : "net.logstash.logback:logstash-logback-encoder:$versions.logstashVersion",
+            feignSlf4j             : "io.github.openfeign:feign-slf4j:$versions.openFeignVersion",
+            lombok                 : "org.projectlombok:lombok:$versions.lombokVersion",
+            sonarQube              : "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:$versions.sonarQubeVersion",
+            janino                 : "org.codehaus.janino:janino:$versions.janino",
+            aspectj                : "org.aspectj:aspectjrt:$versions.aspectj",
+            okHttp3                : "io.github.openfeign:feign-okhttp:$versions.okHttp3",
+
+            //test libs
+            junitJupiterApi        : "org.junit.jupiter:junit-jupiter-api:$versions.junit5",
+            junitJupiterEngine     : "org.junit.jupiter:junit-jupiter-engine:$versions.junit5",
+            junitJupiterParams     : "org.junit.jupiter:junit-jupiter-params:$versions.junit5",
+            mockito                : "org.mockito:mockito-core:$versions.mockito",
+            mockitoInline          : "org.mockito:mockito-inline:$versions.mockito",
+            mockitoJunitJupiter    : "org.mockito:mockito-junit-jupiter:$versions.mockito",
+            springBootStarterTest  : "org.springframework.boot:spring-boot-starter-test:$versions.springBootVersion"
+    ]
+}

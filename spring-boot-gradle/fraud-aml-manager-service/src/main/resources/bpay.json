@@ -1,0 +1,237 @@
+{
+  "2020-12-03T08:28:22.990000184Z": {
+    "key": "00cc0fefde93449ba95aacb10da1cf9d",
+    "content": {
+      "applicationHeader": {
+        "from": {
+          "organisationIdentification": {
+            "name": null,
+            "postalAddress": null,
+            "countryOfResidence": null,
+            "contactDetails": null,
+            "identification": {
+              "organisationIdentification": {
+                "other": [
+                  {
+                    "identification": "corePayments",
+                    "schemeName": null,
+                    "issuer": null
+                  }
+                ],
+                "LEI": null,
+                "anyBIC": null
+              },
+              "privateIdentification": null
+            }
+          }
+        },
+        "to": {
+          "organisationIdentification": {
+            "name": null,
+            "postalAddress": null,
+            "countryOfResidence": null,
+            "contactDetails": null,
+            "identification": {
+              "organisationIdentification": {
+                "other": [
+                  {
+                    "identification": "fam",
+                    "schemeName": null,
+                    "issuer": null
+                  }
+                ],
+                "LEI": null,
+                "anyBIC": null
+              },
+              "privateIdentification": null
+            }
+          }
+        },
+        "businessMessageIdentifier": "fraudCheckRequest",
+        "messageDefinitionIdentifier": "fraudCheckRequestV1",
+        "creationDate": 1606984102989
+      },
+      "creditTransferFraudCheckRequest": {
+        "groupHeader": {
+          "messageIdentification": "00cc0fefde93449ba95aacb10da1cf9d",
+          "creationDateTime": 1606984102989,
+          "batchBooking": null,
+          "numberOfTransactions": "1",
+          "controlSum": null,
+          "totalAmount": null
+        },
+        "creditTransferTransactionInformation": [
+          {
+            "paymentIdentification": {
+              "instructionIdentification": "7QHTA3VNI6N4HITNIJ2RDP8QQK4A5DV4",
+              "endToEndIdentification": "ThankForBPAYExact19",
+              "transactionIdentification": null,
+              "UETR": null,
+              "clearingSystemReference": null
+            },
+            "paymentTypeInformation": [
+              {
+                "instructionPriority": null,
+                "clearingChannel": null,
+                "serviceLevel": [
+                  {
+                    "code": "NURG",
+                    "proprietary": null
+                  }
+                ],
+                "localInstrument": null,
+                "categoryPurpose": null
+              }
+            ],
+            "settlementAmount": {
+              "currency": "AUD",
+              "value": "\\u0002T\\u000Bãÿ"
+            },
+            "settlementDate": 18599,
+            "settlementPriority": null,
+            "settlementTimeIndication": null,
+            "settlementTimeRequest": null,
+            "acceptanceDateTime": 1606984102431,
+            "poolingAdjustmentDate": null,
+            "instructedAmount": {
+              "currency": "AUD",
+              "value": "\\u0002T\\u000Bãÿ"
+            },
+            "exchangeRate": null,
+            "chargeBearer": "SLEV",
+            "chargesInformation": null,
+            "previousInstructingAgent1": null,
+            "previousInstructingAgent1Account": null,
+            "previousInstructingAgent2": null,
+            "previousInstructingAgent2Account": null,
+            "previousInstructingAgent3": null,
+            "previousInstructingAgent3Account": null,
+            "instructingAgent": null,
+            "instructedAgent": null,
+            "intermediaryAgent1": null,
+            "intermediaryAgent1Account": null,
+            "intermediaryAgent2": null,
+            "intermediaryAgent2Account": null,
+            "intermediaryAgent3": null,
+            "intermediaryAgent3Account": null,
+            "ultimateDebtor": null,
+            "initiatingParty": {
+              "name": "Rohit Sharma",
+              "postalAddress": null,
+              "identification": null,
+              "countryOfResidence": null,
+              "contactDetails": null
+            },
+            "debtor": {
+              "name": "Vinod Mahajan",
+              "postalAddress": null,
+              "identification": null,
+              "countryOfResidence": null,
+              "contactDetails": null
+            },
+            "debtorAccount": {
+              "identification": {
+                "internationalBankAccountNumber": null,
+                "other": {
+                  "identification": "037886967594486",
+                  "schemeName": {
+                    "code": "BBAN",
+                    "proprietary": null
+                  },
+                  "issuer": null
+                }
+              },
+              "type": null,
+              "currency": null,
+              "name": null,
+              "proxy": null
+            },
+            "debtorAgent": {
+              "financialInstitutionIdentification": {
+                "BICFI": null,
+                "LEI": null,
+                "clearingSystemMemberIdentification": {
+                  "clearingSystemIdentification": {
+                    "code": "AUBSB",
+                    "proprietary": null
+                  },
+                  "memberIdentification": "037886"
+                },
+                "name": null,
+                "postalAddress": null,
+                "other": null
+              },
+              "branchIdentification": null
+            },
+            "debtorAgentAccount": null,
+            "creditorAgent": {
+              "financialInstitutionIdentification": {
+                "BICFI": null,
+                "LEI": null,
+                "clearingSystemMemberIdentification": {
+                  "clearingSystemIdentification": {
+                    "code": null,
+                    "proprietary": "AU_BPAY_BILLER_CODE"
+                  },
+                  "memberIdentification": "0230890650"
+                },
+                "name": null,
+                "postalAddress": null,
+                "other": null
+              },
+              "branchIdentification": null
+            },
+            "creditorAgentAccount": null,
+            "creditor": {
+              "name": "Prakash Pandey",
+              "postalAddress": null,
+              "identification": null,
+              "countryOfResidence": null,
+              "contactDetails": null
+            },
+            "creditorAccount": null,
+            "ultimateCreditor": null,
+            "instructionForCreditorAgent": null,
+            "instructionForNextAgent": null,
+            "purpose": {
+              "code": "SALA",
+              "proprietary": null
+            },
+            "regulatoryReporting": null,
+            "tax": null,
+            "relatedRemittanceInformation": null,
+            "remittanceInformation": null,
+            "supplementaryData": [
+              {
+                "placeAndName": null,
+                "envelope": {
+                  "supplementaryDataSchema": "urn:10x:iso:20022:tech:xsd:supl.001.001.01",
+                  "paymentCategory": null,
+                  "sequenceType": null,
+                  "messageTraceIdentification": null,
+                  "instructionReceiptIdentification": null,
+                  "instructionTraceIdentification": "7e1bd4b4-913c-4881-96a5-2bc14f9fca7e",
+                  "transactionTraceIdentification": "27f2fe69-e7e1-44d0-8303-fe22064a0419",
+                  "routingDestination": "AU_BPAY",
+                  "schemeName": "AU_BPAY",
+                  "partyKey": "0ceac822-9b60-4be0-b7e8-d18169db07ba",
+                  "schema": null,
+                  "paymentTags": null,
+                  "technicalInputChannel": null
+                }
+              }
+            ]
+          }
+        ],
+        "supplementaryData": null
+      }
+    },
+    "headers": {
+      "b3": "58d3bb3af3919add-ecbd7181ac330218-1"
+    },
+    "partition": 0,
+    "offset": 184,
+    "eventName": "com.tenxbanking.iso.lib.IsoCreditTransferFraudCheckRequestV01",
+    "eventType": "N/A"
+  }
+}

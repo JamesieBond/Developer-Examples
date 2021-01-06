@@ -1,0 +1,17 @@
+= Request Flows
+
+== POST `/v1/payments/{payment-type}/finCrimeCheck`
+
+The fincrime checks endpoint for payments is a set of three urls, one for each type of payments: FPS inbound,
+FPS outbound and ON US.
+They all follow the same flow.
+
+```
++-------------+    +---------------------+    +---------------+    +---------------+
+|             |    |                     |    |               |    |               |
+|  Payment    |    |                     |    |  Transaction  |    |  Transaction  |
+|  Decision   +---->  Fraud AML Manager  +---->  Monitoring   +---->  Monitoring   |
+|  Framework  |    |                     |    |  Adapter      |    |  3rd party    |
+|             |    |                     |    |               |    |               |
++-------------+    +---------------------+    +---------------+    +---------------+
+```

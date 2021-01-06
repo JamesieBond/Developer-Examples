@@ -1,0 +1,18 @@
+FROM 786796192785.dkr.ecr.eu-west-1.amazonaws.com/10x/10x-openjdk-11-ssm
+
+RUN addgroup --gid 1000 ubuntu
+RUN useradd --uid 1000 --gid 1000 --home-dir /fraud-aml-manager --shell /bin/bash ubuntu
+
+ADD . /fraud-aml-manager
+WORKDIR /fraud-aml-manager
+
+RUN chown -R ubuntu:ubuntu /fraud-aml-manager
+
+ARG SONARQUBE_SCANNER_PARAMS='{}'
+ARG COMMIT_ID
+ENV COMMIT_ID=$COMMIT_ID
+LABEL archive.test.results=$COMMIT_ID
+
+USER ubuntu
+
+ENTRYPOINT ./gradlew clean :post-deployment-tests:cucumber --info

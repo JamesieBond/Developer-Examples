@@ -1,0 +1,39 @@
+{
+  "type": "record",
+  "name": "DeviceProfilingEvent",
+  "namespace": "com.tenx.fraud",
+  "fields": [
+    {
+      "name": "partyKey",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "deviceKeyId",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "sessionId",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "eventType",
+      "type": [
+        "null",
+        {
+          "type": "string",
+          "avro.java.string": "String"
+        }
+      ],
+      "default": null
+    }
+  ]
+}

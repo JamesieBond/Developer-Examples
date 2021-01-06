@@ -1,0 +1,59 @@
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
+
+def nexusUsername = project.property("nexusUsername")
+def nexusPassword =project.property("nexusPassword")
+def nexusUrl = project.property("nexusUrl")
+def releasesRepoUrl = "${nexusUrl}/repository/maven-releases"
+def snapshotsRepoUrl = "${nexusUrl}/repository/maven-snapshots"
+def groupPath = properties['groupPath']
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+    }
+  }
+
+  repositories {
+    maven {
+      name = "tenx-sonatype-nexus"
+      afterEvaluate {
+        url = project.version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+      }
+      credentials {
+        username = "${nexusUsername}"
+        password = "${nexusPassword}"
+      }
+    }
+  }
+}
+
+/*
+Only Publish if the Artifact doesn't exist.
+This is a retrofit, which can be removed once Sonatype Nexus is upgraded.
+ */
+tasks.withType(PublishToMavenRepository) {
+  onlyIf {
+    def artifact = "${publication.getArtifactId()}-${publication.getVersion()}"
+    def url = "${releasesRepoUrl}/${groupPath}/${project.name}/${version}/${artifact}.jar.md5"
+    println("Checking if artifact ${artifact} already exists...")
+    println("HTTP GET ${url}")
+    def doPublish = exec {
+      commandLine('curl', '--silent', '--fail', "${url}")
+      ignoreExitValue = true
+    }.exitValue != 0
+    if (doPublish) {
+      println("Enable Publish of ${artifact}")
+    }
+    return doPublish
+  }
+}
+
+/*
+This also a retrofit, which can be removed once Sonatype Nexus is upgraded.
+The hashsum types expected are longer than the ones Nexux is compatible with.
+*/
+tasks.withType(GenerateModuleMetadata) {
+  enabled = false
+}

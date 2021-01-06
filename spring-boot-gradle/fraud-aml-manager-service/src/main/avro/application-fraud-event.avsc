@@ -1,0 +1,174 @@
+{
+  "type": "record",
+  "name": "ApplicationFraudEvent",
+  "namespace": "com.tenx.dub.fraud.event.v1",
+  "fields": [
+    {
+      "name": "Request",
+      "type": {
+        "type": "record",
+        "name": "Request",
+        "fields": [
+          {
+            "name": "enquiryUId",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          },
+          {
+            "name": "enquiryDateTime",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          },
+          {
+            "name": "channel",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          },
+          {
+            "name": "productCode",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          },
+          {
+            "name": "nameType",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          },
+          {
+            "name": "title",
+            "type": [
+            "null",
+            {
+              "type": "string",
+              "avro.java.string": "String"
+            }],
+            "default": null
+          },
+          {
+            "name": "firstName",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          },
+          {
+            "name": "middleNames",
+            "type": [
+            "null",
+            {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+            ],
+            "default": null
+          },
+          {
+            "name": "surname",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          },
+          {
+            "name": "companyName",
+            "type":[
+            "null"
+            ,{
+              "type": "string",
+              "avro.java.string": "String"
+            }
+            ],
+            "default": null
+          },
+          {
+            "name": "dateOfBirth",
+            "type": [
+            "null",
+            {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+            ],
+            "default": null
+          },
+          {
+            "name": "phoneNumber",
+            "type": [
+            "null",
+            {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+            ],
+            "default": null
+          },
+          {
+            "name": "emailAddress",
+            "type": [
+            "null",
+            {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+            ],
+            "default": null
+          },
+          {
+            "name": "city",
+            "type": [
+            "null",{
+              "type": "string",
+              "avro.java.string": "String"
+            }
+            ],
+            "default": null
+          },
+          {
+            "name": "postCode",
+            "type": [
+            "null",
+            {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+            ],
+            "default": null
+          },
+          {
+            "name": "sourceMessageIssuedDateTime",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Response",
+      "type": {
+        "type": "record",
+        "name": "Response",
+        "fields": [
+          {
+            "name": "siraResponse",
+            "type": {
+              "type": "string",
+              "avro.java.string": "String"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

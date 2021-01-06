@@ -1,0 +1,10 @@
+dependencies {
+    implementation libs.springBootStarter
+    implementation libs.springWebFlux
+    implementation libs.servletApi
+    implementation libs.p6spyStarter
+    implementation libs.logstashLogbackEncoder
+    implementation libs.feignSlf4j
+    implementation libs.janino
+    implementation libs.aspectj
+}

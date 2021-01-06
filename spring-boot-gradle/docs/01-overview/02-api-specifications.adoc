@@ -1,0 +1,5 @@
+= Api Specifications
+
+== Swaggers
+* https://fraudamlmanager-fraud.svc.devblue.mylti3gh7p4x.net/swagger-ui.html[Dev Blue]
+* https://fraudamlmanager-fraud.svc.solution-testblue.mylti3gh7p4x.net/swagger-ui.html[Solution Test Blue]

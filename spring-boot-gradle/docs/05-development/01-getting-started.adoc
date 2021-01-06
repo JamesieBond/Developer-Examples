@@ -1,0 +1,6 @@
+= Getting Started
+
+See the README.md for information on how to begin development with this micro-service:
+
+* link:https://bitbucket.10x.mylti3gh7p4x.net/projects/FT24/repos/fraud-aml-manager/browse[Fraud AML Manager Repository]
+

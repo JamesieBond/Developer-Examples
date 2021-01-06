@@ -1,0 +1,40 @@
+pipeline {
+  agent {
+    docker {
+      image 'openjdk:11'
+    }
+  }
+
+  stages {
+    // NOTE: make sure to select 'checkout via SSH' within Jenkins-UI Configuration, otherwise release plugin will not work.
+    stage('Build') {
+      steps {
+        sh './gradlew -Dorg.gradle.daemon=false'
+      }
+    }
+
+    stage('Publish') {
+      when {
+        branch 'master'
+      }
+
+      environment {
+        NEXUS = credentials('Nexus')
+        BITBUCKET = credentials('jenkins-bitbucket-ssh')
+        GIT_SSH_COMMAND = 'ssh -o StrictHostKeyChecking=no'
+      }
+      steps {
+        sshagent(credentials: ['jenkins-bitbucket-ssh']) {
+          sh './gradlew currentVersion'
+          sh './gradlew --info release -Prelease.disableChecks -Prelease.pushTagsOnly'
+          sh './gradlew --info publish -PnexusUsername=$NEXUS_USR -PnexusPassword=$NEXUS_PSW'
+        }
+      }
+    }
+  }
+  post {
+    success {
+      junit allowEmptyResults: true, testResults: '**/test-results/**/*.xml'
+    }
+  }
+}

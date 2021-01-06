@@ -1,0 +1,47 @@
+= Feature Team 24
+
+[cols="3", options="header"]
+|===
+| Name | Level | Email
+| Massimo Della Rovere
+| Team Lead
+| mdellarovere@deloitte.ie
+
+| James Spencer
+| SME
+| jspencer@deloitte.ie
+
+| Mohan Sai
+| SME
+| mors@deloitte.ie;
+
+| Claudiu Dumitrascu
+| SME
+| cdumitrascu@deloittece.com
+
+| Alin Rosculet
+| SME
+| arosculet@deloittece.com
+
+| Bogdan Iliuta
+| SME
+| biliuta@deloittece.com
+
+| Marius Cimpeanu
+| SME
+| rcimpeanu@deloittece.com
+
+| Petru Bodea
+| SME
+| pbodea@deloittece.com
+
+| Tiberiu Bolba
+| SME
+| tbolba@deloittece.com
+
+| Vladimir Stanciu
+| SME
+| vstanciu@deloittece.com
+
+|===
+SME - Subject Matter Expert

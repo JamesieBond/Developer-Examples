@@ -1,0 +1,4 @@
+FROM 786796192785.dkr.ecr.eu-west-1.amazonaws.com/10x/10x-openjdk-11-ssm AS build
+ADD . /src
+WORKDIR /src
+ENTRYPOINT ./gradlew :fraud-aml-manager-pact:test :fraud-aml-manager-pact:pactPublish :fraud-aml-manager-pact:pactVerify --info

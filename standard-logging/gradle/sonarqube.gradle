@@ -1,0 +1,8 @@
+sonarqube {
+  properties {
+    property "sonar.projectName", "standard-logging"
+    property "sonar.projectKey", "sls"
+    property "sonar.modules", ":standard-logging-spring,:standard-logging-spring-starter"
+    property 'sonar.coverage.exclusions', "**/com/tenx/logging/model/**, **/build/**/*.java"
+  }
+}

@@ -1,0 +1,20 @@
+= Platform Contracts
+
+This page documents the contracts of the micro-service.
+The aim of the page is to allow the development teams to understand the value of the micro-service within the wider 10x platform.
+
+== Contracts Provided
+
+These are the contracts provided by the micro-service to the wider 10x Platform.
+These contracts represent the interactions that are supported by the micro-service.
+The main representation of the contract within the 10x platform is PACT, but this might not be the only resource that describes the commitments to other micro-service.
+
+* http://pactbroker-pact.svc.tooling.mylti3gh7p4x.net (all the ones with Fraud AML Manager in provider column)
+
+== Contracts Consumed
+
+These are the contract/dependencies that must be present witin a deployment of the 10x platform.
+These contracts allow the service to function correctly.
+The main representation of the contract within the 10x platform is PACT, but this might not be the only resource that describes a dependency on another micro-service.
+
+* http://pactbroker-pact.svc.tooling.mylti3gh7p4x.net (all the ones with Fraud AML Manager in consumer column)

@@ -1,0 +1,5 @@
+dependencies:
+  - name: microservice-base
+    version: 0.30.3
+    repository: alias:microservice-base
+    alias: microservice

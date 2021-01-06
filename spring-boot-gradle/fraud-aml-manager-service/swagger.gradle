@@ -1,0 +1,89 @@
+
+buildscript {
+    repositories {
+        maven { url "http://repo.mylti3gh7p4x.net/repository/maven-releases/" }
+        maven { url "http://repo.mylti3gh7p4x.net/repository/maven-public/" }
+        maven { url 'http://nexus.internal.10x.mylti3gh7p4x.net/repository/jcenter/' }
+        maven { url 'http://nexus.internal.10x.mylti3gh7p4x.net/repository/maven-central/' }
+        maven { url "http://nexus.internal.10x.mylti3gh7p4x.net/repository/maven-releases/" }
+    }
+    dependencies {
+        classpath "org.openapitools:openapi-generator-gradle-plugin:5.0.0-beta2"
+    }
+}
+
+//TODO change Input path to swaggerhub-gradle download output path
+def swaggerInputCreditTransfer = "../credit-transfer-client/api-spec.json"
+def swaggerOutputDirCreditTransfer = file('./')
+
+clean.doFirst {
+    delete("/src/main/java/com/tenx/fraudamlmanager/payments/core/credittransfer/domain/model")
+}
+
+configurations {
+    swagger
+}
+sourceSets {
+    swagger {
+        compileClasspath = configurations.swaggerCompile
+        java {
+            srcDir file("${project.buildDir.path}/swagger/src/main/java")
+        }
+    }
+    main {
+        compileClasspath += swagger.output
+        runtimeClasspath += swagger.output
+    }
+    test {
+        compileClasspath += swagger.output
+        runtimeClasspath += swagger.output
+    }
+}
+
+import org.openapitools.codegen.DefaultGenerator
+import org.openapitools.codegen.config.CodegenConfigurator
+
+task generateCreditTransferApi {
+    inputs.file(swaggerInputCreditTransfer)
+    outputs.dir(swaggerOutputDirCreditTransfer)
+    doLast {
+        def config = new CodegenConfigurator()
+        config.setInputSpec(file(swaggerInputCreditTransfer).path)
+        config.setOutputDir(swaggerOutputDirCreditTransfer.path)
+        config.setTypeMappings([
+                "OffsetDateTime": "java.time.ZonedDateTime"
+        ])
+        config.setGeneratorName("spring")
+        config.setAdditionalProperties([
+                "groupId":"com.tenx.feedzaimanager",
+                "artifactId":"credit-transfer-client",
+                "artifactVersion":"0.0.1",
+                "artifactDescription": "Credit Transfer Client generated with swagger-codegen",
+                "library":"spring-boot",
+                "dateLibrary": "java9",
+                "modelPackage": "com.tenx.fraudamlmanager.payments.core.credittransfer.domain.model",
+                "apiPackage": "com.tenx.fraudamlmanager.payments.core.credittransfer.domain.api",
+                "invokerPackage": "com.tenx.fraudamlmanager.payments.core.credittransfer.domain.api",
+                "hideGenerationTimestamp": true,
+                "useGzipFeature": true
+        ])
+        new DefaultGenerator().opts(config.toClientOptInput()).generate()
+    }
+}
+
+task generateApi {
+    generateApi.dependsOn generateCreditTransferApi
+}
+
+compileSwaggerJava.dependsOn generateApi
+classes.dependsOn swaggerClasses
+compileJava.dependsOn compileSwaggerJava
+
+task cleanAfterGenerateApi{
+    doLast {
+        delete("./src/main/java/org/")
+        delete("./.openapi-generator")
+        delete("./src/main/java/com/tenx/fraudamlmanager/payments/core/credittransfer/domain/api")
+    }
+}
+compileJava.finalizedBy(cleanAfterGenerateApi)

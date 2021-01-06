@@ -1,0 +1,515 @@
+{
+  "customerPaymentStatusReport": {
+    "groupHeader": {
+      "creationDateTime": 1604310181820,
+      "creditorAgent": null,
+      "debtorAgent": null,
+      "forwardingAgent": null,
+      "initiatingParty": null,
+      "messageIdentification": "d903c5eb70bb4433bc74b558aac69d5c"
+    },
+    "originalGroupInformationAndStatus": {
+      "groupStatus": {
+        "string": "RJCT"
+      },
+      "numberOfTransactionsPerStatus": null,
+      "originalControlSum": null,
+      "originalCreationDateTime": {
+        "long": 1604310022761
+      },
+      "originalMessageIdentification": "11212020084022762",
+      "originalMessageNameIdentification": "pain.001.x01.09",
+      "originalNumberOfTransactions": {
+        "string": "2"
+      },
+      "statusReasonInformation": {
+        "array": [
+          {
+            "additionalInformation": null,
+            "originator": null,
+            "reason": {
+              "com.tenxbanking.iso.lib.StatusReason6Choice": {
+                "code": null,
+                "proprietary": {
+                  "string": "BusinessValidationSucceeded"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "originalPaymentInformationAndStatus": {
+      "array": [
+        {
+          "numberOfTransactionsPerStatus": null,
+          "originalControlSum": null,
+          "originalNumberOfTransactions": {
+            "string": "1"
+          },
+          "originalPaymentInformationIdentification": "99914b932bd37a50b983c5e7c90ae93b",
+          "paymentInformationStatus": {
+            "string": "ACSC"
+          },
+          "statusReasonInformation": {
+            "array": [
+              {
+                "additionalInformation": {
+                  "array": [
+                    "29cc8028-9825-4341-8600-4a2e159ff43b"
+                  ]
+                },
+                "originator": null,
+                "reason": {
+                  "com.tenxbanking.iso.lib.StatusReason6Choice": {
+                    "code": null,
+                    "proprietary": {
+                      "string": "FundsReservationSucceeded"
+                    }
+                  }
+                }
+              },
+              {
+                "additionalInformation": null,
+                "originator": null,
+                "reason": {
+                  "com.tenxbanking.iso.lib.StatusReason6Choice": {
+                    "code": null,
+                    "proprietary": {
+                      "string": "BusinessValidationSucceeded"
+                    }
+                  }
+                }
+              },
+              {
+                "additionalInformation": {
+                  "array": [
+                    "29cc8028-9825-4341-8600-4a2e159ff43b"
+                  ]
+                },
+                "originator": null,
+                "reason": {
+                  "com.tenxbanking.iso.lib.StatusReason6Choice": {
+                    "code": null,
+                    "proprietary": {
+                      "string": "DebitPostingSucceeded"
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "transactionInformationAndStatus": {
+            "array": [
+              {
+                "acceptanceDateTime": {
+                  "long": 1604310024300
+                },
+                "accountServicerReference": null,
+                "chargesInformation": null,
+                "clearingSystemReference": null,
+                "originalEndToEndIdentification": {
+                  "string": "Pizza"
+                },
+                "originalInstructionIdentification": null,
+                "originalTransactionReference": {
+                  "com.tenxbanking.iso.lib.OriginalTransactionReference28": {
+                    "amount": {
+                      "com.tenxbanking.iso.lib.AmountType4Choice": {
+                        "equivalentAmount": null,
+                        "instructedAmount": {
+                          "com.tenxbanking.iso.lib.ActiveOrHistoricCurrencyAndAmount": {
+                            "currency": "AUD",
+                            "value": "d"
+                          }
+                        }
+                      }
+                    },
+                    "creditor": {
+                      "com.tenxbanking.iso.lib.Party40Choice": {
+                        "agent": null,
+                        "party": {
+                          "com.tenxbanking.iso.lib.PartyIdentification135": {
+                            "name": {
+                              "string": "testPartyName"
+                            },
+                            "postalAddress": null,
+                            "identification": null,
+                            "countryOfResidence": null,
+                            "contactDetails": null
+                          }
+                        }
+                      }
+                    },
+                    "creditorAccount": {
+                      "com.tenxbanking.iso.lib.CashAccount38": {
+                        "currency": null,
+                        "identification": {
+                          "internationalBankAccountNumber": null,
+                          "other": {
+                            "com.tenxbanking.iso.lib.GenericAccountIdentification": {
+                              "identification": "040016497922050",
+                              "issuer": null,
+                              "schemeName": {
+                                "com.tenxbanking.iso.lib.AccountSchemeName1Choice": {
+                                  "code": {
+                                    "string": "BBAN"
+                                  },
+                                  "proprietary": null
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "name": null,
+                        "proxy": null,
+                        "type": null
+                      }
+                    },
+                    "creditorAgent": {
+                      "com.tenxbanking.iso.lib.BranchAndFinancialInstitutionIdentification6": {
+                        "branchIdentification": null,
+                        "financialInstitutionIdentification": {
+                          "BICFI": null,
+                          "LEI": null,
+                          "clearingSystemMemberIdentification": {
+                            "com.tenxbanking.iso.lib.ClearingSystemMemberIdentification2": {
+                              "clearingSystemIdentification": {
+                                "com.tenxbanking.iso.lib.ClearingSystemIdentification2Choice": {
+                                  "code": {
+                                    "string": "AUBSB"
+                                  },
+                                  "proprietary": null
+                                }
+                              },
+                              "memberIdentification": "040016"
+                            }
+                          },
+                          "name": null,
+                          "other": null,
+                          "postalAddress": null
+                        }
+                      }
+                    },
+                    "creditorAgentAccount": null,
+                    "creditorSchemeIdentification": null,
+                    "debtor": {
+                      "com.tenxbanking.iso.lib.Party40Choice": {
+                        "agent": null,
+                        "party": {
+                          "com.tenxbanking.iso.lib.PartyIdentification135": {
+                            "name": {
+                              "string": "testPartyDebtorName"
+                            },
+                            "postalAddress": null,
+                            "identification": null,
+                            "countryOfResidence": null,
+                            "contactDetails": null
+                          }
+                        }
+                      }
+                    },
+                    "debtorAccount": {
+                      "com.tenxbanking.iso.lib.CashAccount38": {
+                        "currency": null,
+                        "identification": {
+                          "internationalBankAccountNumber": null,
+                          "other": {
+                            "com.tenxbanking.iso.lib.GenericAccountIdentification": {
+                              "identification": "c5b520dd38464ccf94000f4e32c27fc9",
+                              "issuer": null,
+                              "schemeName": {
+                                "com.tenxbanking.iso.lib.AccountSchemeName1Choice": {
+                                  "code": null,
+                                  "proprietary": {
+                                    "string": "INTL"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "name": null,
+                        "proxy": null,
+                        "type": null
+                      }
+                    },
+                    "debtorAgent": {
+                      "com.tenxbanking.iso.lib.BranchAndFinancialInstitutionIdentification6": {
+                        "branchIdentification": null,
+                        "financialInstitutionIdentification": {
+                          "BICFI": null,
+                          "LEI": null,
+                          "clearingSystemMemberIdentification": {
+                            "com.tenxbanking.iso.lib.ClearingSystemMemberIdentification2": {
+                              "clearingSystemIdentification": {
+                                "com.tenxbanking.iso.lib.ClearingSystemIdentification2Choice": {
+                                  "code": {
+                                    "string": "AUBSB"
+                                  },
+                                  "proprietary": null
+                                }
+                              },
+                              "memberIdentification": "037886"
+                            }
+                          },
+                          "name": null,
+                          "other": null,
+                          "postalAddress": null
+                        }
+                      }
+                    },
+                    "debtorAgentAccount": null,
+                    "interbankSettlementAmount": {
+                      "com.tenxbanking.iso.lib.ActiveOrHistoricCurrencyAndAmount": {
+                        "currency": "EUR",
+                        "value": "a"
+                      }
+                    },
+                    "interbankSettlementDate": {
+                      "int": 18534
+                    },
+                    "mandateRelatedInformation": null,
+                    "paymentMethod": {
+                      "com.tenxbanking.iso.lib.PaymentMethod": "TRF"
+                    },
+                    "paymentTypeInformation": {
+                      "com.tenxbanking.iso.lib.PaymentTypeInformation27": {
+                        "categoryPurpose": null,
+                        "clearingChannel": null,
+                        "instructionPriority": null,
+                        "localInstrument": null,
+                        "sequenceType": null,
+                        "serviceLevel": {
+                          "array": [
+                            {
+                              "code": {
+                                "string": "NURG"
+                              },
+                              "proprietary": null
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "purpose": null,
+                    "remittanceInformation": null,
+                    "requestedCollectionDate": null,
+                    "requestedExecutionDate": {
+                      "com.tenxbanking.iso.lib.DateAndDateTime2Choice": {
+                        "date": {
+                          "int": 18568
+                        },
+                        "dateTime": null
+                      }
+                    },
+                    "settlementInformation": null,
+                    "ultimateCreditor": null,
+                    "ultimateDebtor": null
+                  }
+                },
+                "originalUETR": null,
+                "statusIdentification": null,
+                "statusReasonInformation": {
+                  "array": [
+                    {
+                      "additionalInformation": {
+                        "array": [
+                          "AU_BECS_CT"
+                        ]
+                      },
+                      "originator": null,
+                      "reason": {
+                        "com.tenxbanking.iso.lib.StatusReason6Choice": {
+                          "code": null,
+                          "proprietary": {
+                            "string": "SchemeDetermined"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "additionalInformation": {
+                        "array": [
+                          "on-us"
+                        ]
+                      },
+                      "originator": null,
+                      "reason": {
+                        "com.tenxbanking.iso.lib.StatusReason6Choice": {
+                          "code": null,
+                          "proprietary": {
+                            "string": "RoutingDestination"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "additionalInformation": null,
+                      "originator": null,
+                      "reason": {
+                        "com.tenxbanking.iso.lib.StatusReason6Choice": {
+                          "code": null,
+                          "proprietary": {
+                            "string": "FraudCheckApproved"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "additionalInformation": {
+                        "array": [
+                          "2d94fc28-1d2b-4430-b2ce-0a5db9a3484a"
+                        ]
+                      },
+                      "originator": null,
+                      "reason": {
+                        "com.tenxbanking.iso.lib.StatusReason6Choice": {
+                          "code": null,
+                          "proprietary": {
+                            "string": "CreditPostingSucceeded"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "supplementaryData": {
+                  "array": [
+                    {
+                      "envelope": {
+                        "instructionReceiptIdentification": null,
+                        "instructionTraceIdentification": null,
+                        "messageTraceIdentification": null,
+                        "partyKey": null,
+                        "paymentCategory": null,
+                        "paymentTags": null,
+                        "routingDestination": {
+                          "string": "on_us"
+                        },
+                        "schema": {
+                          "string": "urn:10x:iso:20022:tech:xsd:supl.001.001.01"
+                        },
+                        "schemeName": null,
+                        "sequenceType": null,
+                        "supplementaryDataSchema": null,
+                        "technicalInputChannel": null,
+                        "transactionTraceIdentification": {
+                          "string": "2d94fc28-1d2b-4430-b2ce-0a5db9a3484a"
+                        }
+                      },
+                      "placeAndName": null
+                    }
+                  ]
+                },
+                "trackerData": null,
+                "transactionStatus": {
+                  "string": "ACSC"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "supplementaryData": {
+      "array": [
+        {
+          "envelope": {
+            "instructionReceiptIdentification": null,
+            "instructionTraceIdentification": null,
+            "messageTraceIdentification": {
+              "string": "bac98614-02b7-4f23-a996-093d5c8d7fae"
+            },
+            "partyKey": {
+              "string": "my_test_party_key"
+            },
+            "paymentCategory": null,
+            "paymentTags": null,
+            "routingDestination": null,
+            "schema": {
+              "string": "urn:10x:iso:20022:tech:xsd:supl.001.001.01"
+            },
+            "schemeName": null,
+            "sequenceType": null,
+            "supplementaryDataSchema": null,
+            "technicalInputChannel": null,
+            "transactionTraceIdentification": null
+          },
+          "placeAndName": {
+            "string": "customerPaymentStatusReport.originalGroupInformationAndStatus[0]"
+          }
+        },
+        {
+          "envelope": {
+            "instructionReceiptIdentification": {
+              "string": "695863e7-ae7b-4f9d-b93a-afc97324e6b2"
+            },
+            "instructionTraceIdentification": {
+              "string": "29cc8028-9825-4341-8600-4a2e159ff43b"
+            },
+            "messageTraceIdentification": null,
+            "partyKey": {
+              "string": "13tr8028-9825-4341-8600-4a2e159ff43b"
+            },
+            "paymentCategory": null,
+            "paymentTags": null,
+            "routingDestination": null,
+            "schema": {
+              "string": "urn:10x:iso:20022:tech:xsd:supl.001.001.01"
+            },
+            "schemeName": null,
+            "sequenceType": null,
+            "supplementaryDataSchema": null,
+            "technicalInputChannel": null,
+            "transactionTraceIdentification": null
+          },
+          "placeAndName": {
+            "string": "customerPaymentStatusReport.originalPaymentInformationAndStatus[0]"
+          }
+        }
+      ]
+    }
+  },
+  "paymentsEventMetadata": {
+    "clearingSystemIdentification": null,
+    "correlationIdentification": {
+      "array": [
+        {
+          "UETR": null,
+          "endToEndIdentification": null,
+          "instructionIdentification": null,
+          "instructionReceiptIdentification": {
+            "string": "695863e7-ae7b-4f9d-b93a-afc97324e6b2"
+          },
+          "instructionTraceIdentification": {
+            "string": "29cc8028-9825-4341-8600-4a2e159ff43b"
+          },
+          "messageIdentification": {
+            "string": "11212020084022762"
+          },
+          "messageTraceIdentification": {
+            "string": "bac98614-02b7-4f23-a996-093d5c8d7fae"
+          },
+          "originalTransactionTraceIdentification": null,
+          "paymentInformationIdentification": {
+            "string": "99914b932bd37a50b983c5e7c90ae93b"
+          },
+          "returnIdentification": null,
+          "transactionIdentification": null,
+          "transactionTraceIdentification": {
+            "string": "abcdefgh"
+          }
+        }
+      ]
+    },
+    "createdBy": "corePayments",
+    "creationDateTime": 1604310193875,
+    "eventIdentification": "ffd1e648-3eaf-4bc8-91d7-77a83120df26",
+    "eventType": "payments.customerCreditTransferInitiation.completed",
+    "schema": "CustomerPaymentStatusReportV10",
+    "technicalInputChannel": null,
+    "tenantKey": null,
+    "tenant": null
+  }
+}

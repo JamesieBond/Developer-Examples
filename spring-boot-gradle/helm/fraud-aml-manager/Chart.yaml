@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Fraud and AML manager service
+name: fraud-aml-manager
+version: 3.7.0

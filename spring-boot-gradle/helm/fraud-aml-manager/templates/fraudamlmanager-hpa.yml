@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: fraudamlmanager
+  namespace: fraud
+  labels:
+    app: fraudamlmanager
+spec:
+  maxReplicas: {{ .Values.application.hpa.maxReplicas }}
+  minReplicas: {{ .Values.application.hpa.minReplicas }}
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: fraudamlmanager-default
+  targetCPUUtilizationPercentage: {{ .Values.application.hpa.targetCPUUtilizationPercentage }}

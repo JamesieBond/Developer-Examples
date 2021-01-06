@@ -1,0 +1,36 @@
+{
+  "type": "record",
+  "name": "ExternalRiskScoreEvent",
+  "namespace": "com.tenx.fraud",
+  "fields": [
+    {
+      "name": "partyKey",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "riskScore",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "provider",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      }
+    },
+    {
+      "name": "eventTime",
+      "type": {
+          "type": "string",
+          "avro.java.string": "String"
+      },
+      "doc": "ISO8601 format"
+    }
+  ]
+}

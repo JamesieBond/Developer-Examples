@@ -1,0 +1,7 @@
+= Metrics
+
+Fraud AML Manager is exposing and displaying Metrics on Prometheus and Grafana
+
+** http://prometheus.solution-testblue.mylti3gh7p4x.net/graph[Prometheus SolutionTestBlue]
+
+** https://grafana.solution-testblue.mylti3gh7p4x.net/d/mo5hRTmMz/f24-fraud-aml-manager?orgId=1&refresh=5s[Grafana - SolutionTestBlue]

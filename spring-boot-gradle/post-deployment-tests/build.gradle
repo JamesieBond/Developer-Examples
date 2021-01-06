@@ -1,0 +1,76 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.tenx.fraud'
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+ext {
+    versions = [
+            cucumber   : "5.6.0",
+            junit      : '4.13-rc-1',
+            lombok     : "1.18.12",
+            jackson    : "2.10.2",
+            restassured: "4.3.1"
+    ]
+    libs = [
+            junit                : "junit:junit:$versions.junit",
+            cucumbercore         : "io.cucumber:cucumber-core:$versions.cucumber",
+            cucumberpicocontainer: "io.cucumber:cucumber-picocontainer:$versions.cucumber",
+            cucumbertestng       : "io.cucumber:cucumber-testng:$versions.cucumber",
+            cucumberjava         : "io.cucumber:cucumber-java:$versions.cucumber",
+            cucumberjunit        : "io.cucumber:cucumber-junit:$versions.cucumber",
+            lombok               : "org.projectlombok:lombok:$versions.lombok",
+            jacksonDatabind      : "com.fasterxml.jackson.core:jackson-databind:$versions.jackson",
+            restassured          : "io.rest-assured:rest-assured:$versions.restassured",
+
+    ]
+}
+
+
+dependencies {
+    compile libs.junit
+    compile libs.cucumbercore
+    compile libs.cucumberpicocontainer
+    compile libs.cucumbertestng
+    compile libs.lombok
+    compile libs.jacksonDatabind
+    compile libs.restassured
+
+    testImplementation libs.cucumberjava
+    testImplementation libs.cucumberjunit
+
+    annotationProcessor libs.lombok
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:' + System.getenv("TEST_OUTPUT") + '/html-reporting-' + System.getenv("TEST_TYPE"),
+                    '--plugin', 'junit:' + System.getenv("TEST_OUTPUT") + '/cucumber-report-' + System.getenv("TEST_TYPE") + '/' + System.getenv("TEST_TYPE") + '-cucumber.xml',
+                    '--glue', 'com.tenx.fraudamlmanager.stepdefs', 'src/test/resources',
+                    '--tags', '@' + System.getenv("TEST_TYPE")
+            ]
+            println args
+        }
+    }
+}

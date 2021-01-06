@@ -1,0 +1,752 @@
+{
+    "type" : "record",
+    "name" : "IsoFraudCheckResponseV01",
+    "namespace" : "com.tenxbanking.iso.lib",
+    "doc" : "pacs.002.001.10 Fraud Check Response",
+    "fields" : [ {
+      "name" : "applicationHeader",
+      "type" : {
+        "type" : "record",
+        "name" : "BusinessApplicationHeader",
+        "doc" : "head.001.001.02-BusinessApplicationHeaderV02",
+        "fields" : [ {
+          "name" : "from",
+          "type" : {
+            "type" : "record",
+            "name" : "Party44Choice",
+            "fields" : [ {
+              "name" : "organisationIdentification",
+              "type" : [ "null", {
+                "type" : "record",
+                "name" : "PartyIdentification",
+                "fields" : [ {
+                  "name" : "name",
+                  "type" : [ "null", {
+                    "type" : "string",
+                    "avro.java.string" : "String"
+                  } ],
+                  "default" : null
+                }, {
+                  "name" : "postalAddress",
+                  "type" : [ "null", {
+                    "type" : "record",
+                    "name" : "PostalAddress24",
+                    "fields" : [ {
+                      "name" : "addressType",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "AddressType3Choice",
+                        "fields" : [ {
+                          "name" : "code",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "proprietary",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "GenericIdentification30",
+                            "fields" : [ {
+                              "name" : "identification",
+                              "type" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            }, {
+                              "name" : "issuer",
+                              "type" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            }, {
+                              "name" : "schemeName",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            } ]
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "department",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "subDepartment",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "streetName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "buildingNumber",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "buildingName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "floor",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "postBox",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "room",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "postCode",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "townName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "townLocationName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "districtName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "countrySubDivision",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "country",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "addressLine",
+                      "type" : [ "null", {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        }
+                      } ],
+                      "default" : null
+                    } ]
+                  } ],
+                  "default" : null
+                }, {
+                  "name" : "countryOfResidence",
+                  "type" : [ "null", {
+                    "type" : "string",
+                    "avro.java.string" : "String"
+                  } ],
+                  "default" : null
+                }, {
+                  "name" : "contactDetails",
+                  "type" : [ "null", {
+                    "type" : "record",
+                    "name" : "Contact4",
+                    "fields" : [ {
+                      "name" : "namePrefix",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "name",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "phoneNumber",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "mobileNumber",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "faxNumber",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "emailAddress",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "emailPurpose",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "jobTitle",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "responsibility",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "department",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "other",
+                      "type" : [ "null", {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "record",
+                          "name" : "OtherContact1",
+                          "fields" : [ {
+                            "name" : "channelType",
+                            "type" : {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            }
+                          }, {
+                            "name" : "identification",
+                            "type" : [ "null", {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            } ],
+                            "default" : null
+                          } ]
+                        }
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "preferredMethod",
+                      "type" : [ "null", {
+                        "type" : "enum",
+                        "name" : "PreferredMethod",
+                        "symbols" : [ "LETT", "MAIL", "PHON", "FAXX", "CELL" ]
+                      } ],
+                      "default" : null
+                    } ]
+                  } ],
+                  "default" : null
+                }, {
+                  "name" : "identification",
+                  "type" : [ "null", {
+                    "type" : "record",
+                    "name" : "Party38Choice",
+                    "fields" : [ {
+                      "name" : "organisationIdentification",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "OrganisationIdentification",
+                        "fields" : [ {
+                          "name" : "other",
+                          "type" : [ "null", {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "record",
+                              "name" : "GenericOrganisationIdentification",
+                              "fields" : [ {
+                                "name" : "identification",
+                                "type" : {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                }
+                              }, {
+                                "name" : "schemeName",
+                                "type" : [ "null", {
+                                  "type" : "record",
+                                  "name" : "OrganisationIdentificationSchemeName1Choice",
+                                  "fields" : [ {
+                                    "name" : "code",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  }, {
+                                    "name" : "proprietary",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  } ]
+                                } ],
+                                "default" : null
+                              }, {
+                                "name" : "issuer",
+                                "type" : [ "null", {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                } ],
+                                "default" : null
+                              } ]
+                            }
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "LEI",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "anyBIC",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "privateIdentification",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "PersonIdentification13",
+                        "fields" : [ {
+                          "name" : "dateAndPlaceOfBirth",
+                          "type" : [ "null", {
+                            "type" : "record",
+                            "name" : "DateAndPlaceOfBirth1",
+                            "fields" : [ {
+                              "name" : "birthDate",
+                              "type" : {
+                                "type" : "int",
+                                "logicalType" : "date"
+                              }
+                            }, {
+                              "name" : "provinceOfBirth",
+                              "type" : [ "null", {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              } ],
+                              "default" : null
+                            }, {
+                              "name" : "cityOfBirth",
+                              "type" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            }, {
+                              "name" : "countryOfBirth",
+                              "type" : {
+                                "type" : "string",
+                                "avro.java.string" : "String"
+                              }
+                            } ]
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "other",
+                          "type" : [ "null", {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "record",
+                              "name" : "GenericPersonIdentification1",
+                              "fields" : [ {
+                                "name" : "identification",
+                                "type" : {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                }
+                              }, {
+                                "name" : "schemeName",
+                                "type" : [ "null", {
+                                  "type" : "record",
+                                  "name" : "PersonIdentificationSchemeName1Choice",
+                                  "fields" : [ {
+                                    "name" : "code",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  }, {
+                                    "name" : "proprietary",
+                                    "type" : [ "null", {
+                                      "type" : "string",
+                                      "avro.java.string" : "String"
+                                    } ],
+                                    "default" : null
+                                  } ]
+                                } ],
+                                "default" : null
+                              }, {
+                                "name" : "issuer",
+                                "type" : [ "null", {
+                                  "type" : "string",
+                                  "avro.java.string" : "String"
+                                } ],
+                                "default" : null
+                              } ]
+                            }
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    } ]
+                  } ],
+                  "default" : null
+                } ]
+              } ]
+            } ]
+          }
+        }, {
+          "name" : "to",
+          "type" : "Party44Choice"
+        }, {
+          "name" : "businessMessageIdentifier",
+          "type" : {
+            "type" : "string",
+            "avro.java.string" : "String"
+          }
+        }, {
+          "name" : "messageDefinitionIdentifier",
+          "type" : {
+            "type" : "string",
+            "avro.java.string" : "String"
+          }
+        }, {
+          "name" : "creationDate",
+          "type" : {
+            "type" : "long",
+            "logicalType" : "timestamp-millis"
+          }
+        } ]
+      },
+      "doc" : "head.001.001.02-BusinessApplicationHeaderV02"
+    }, {
+      "name" : "fraudCheckResponse",
+      "type" : {
+        "type" : "record",
+        "name" : "FraudCheckResponseV1",
+        "doc" : "Fraud check response based on - pacs.002.001.10",
+        "fields" : [ {
+          "name" : "groupHeader",
+          "type" : {
+            "type" : "record",
+            "name" : "GroupHeader91",
+            "fields" : [ {
+              "name" : "messageIdentification",
+              "type" : {
+                "type" : "string",
+                "avro.java.string" : "String"
+              }
+            }, {
+              "name" : "creationDateTime",
+              "type" : {
+                "type" : "long",
+                "logicalType" : "timestamp-millis"
+              }
+            } ]
+          }
+        }, {
+          "name" : "transactionInformationAndStatus",
+          "type" : [ "null", {
+            "type" : "array",
+            "items" : {
+              "type" : "record",
+              "name" : "PaymentTransaction110",
+              "fields" : [ {
+                "name" : "transactionStatus",
+                "type" : [ "null", {
+                  "type" : "string",
+                  "avro.java.string" : "String"
+                } ],
+                "default" : null
+              }, {
+                "name" : "statusReasonInformation",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "StatusReasonInformation12",
+                    "fields" : [ {
+                      "name" : "originator",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "PartyIdentification135",
+                        "fields" : [ {
+                          "name" : "name",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "postalAddress",
+                          "type" : [ "null", "PostalAddress24" ],
+                          "default" : null
+                        }, {
+                          "name" : "identification",
+                          "type" : [ "null", "Party38Choice" ],
+                          "default" : null
+                        }, {
+                          "name" : "countryOfResidence",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "contactDetails",
+                          "type" : [ "null", "Contact4" ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "reason",
+                      "type" : [ "null", {
+                        "type" : "record",
+                        "name" : "StatusReason6Choice",
+                        "fields" : [ {
+                          "name" : "code",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "proprietary",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "additionalInformation",
+                      "type" : [ "null", {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "string",
+                          "avro.java.string" : "String"
+                        }
+                      } ],
+                      "default" : null
+                    } ]
+                  }
+                } ],
+                "default" : null
+              }, {
+                "name" : "acceptanceDateTime",
+                "type" : [ "null", {
+                  "type" : "long",
+                  "logicalType" : "timestamp-millis"
+                } ],
+                "default" : null
+              }, {
+                "name" : "supplementaryData",
+                "type" : [ "null", {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "record",
+                    "name" : "SupplementaryData",
+                    "doc" : "10x Supplementary Data Schema",
+                    "fields" : [ {
+                      "name" : "placeAndName",
+                      "type" : [ "null", {
+                        "type" : "string",
+                        "avro.java.string" : "String"
+                      } ],
+                      "default" : null
+                    }, {
+                      "name" : "envelope",
+                      "type" : {
+                        "type" : "record",
+                        "name" : "SupplementaryDataEnvelope",
+                        "fields" : [ {
+                          "name" : "supplementaryDataSchema",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "paymentCategory",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "sequenceType",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "messageTraceIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "instructionReceiptIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "instructionTraceIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "transactionTraceIdentification",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "routingDestination",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "schemeName",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "partyKey",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "schema",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "paymentTags",
+                          "type" : [ "null", {
+                            "type" : "array",
+                            "items" : {
+                              "type" : "string",
+                              "avro.java.string" : "String"
+                            }
+                          } ],
+                          "default" : null
+                        }, {
+                          "name" : "technicalInputChannel",
+                          "type" : [ "null", {
+                            "type" : "string",
+                            "avro.java.string" : "String"
+                          } ],
+                          "default" : null
+                        } ]
+                      }
+                    } ]
+                  }
+                } ],
+                "default" : null
+              } ]
+            }
+          } ],
+          "default" : null
+        }, {
+          "name" : "supplementaryData",
+          "type" : [ "null", {
+            "type" : "array",
+            "items" : "SupplementaryData"
+          } ],
+          "default" : null
+        } ]
+      }
+    } ]
+  }
