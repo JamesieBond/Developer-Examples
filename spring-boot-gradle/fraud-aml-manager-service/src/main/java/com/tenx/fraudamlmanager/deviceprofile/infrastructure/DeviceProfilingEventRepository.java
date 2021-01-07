@@ -9,4 +9,7 @@ public interface DeviceProfilingEventRepository extends JpaRepository<DeviceProf
   DeviceProfileEntity findByPartyKeyAndDeviceKeyId(String partyKey, String deviceKeyId);
 
   DeviceProfileEntity findFirstByPartyKeyOrderByUpdatedDateDesc(String partyKey);
+//
+//  @Query(value = "select * from message_outbox where status = 'PENDING' order by created_timestamp asc limit :limit", nativeQuery = true)
+//  List<MessageOutboxEntity> findPendingMessages(@Param("limit") int limit);
 }

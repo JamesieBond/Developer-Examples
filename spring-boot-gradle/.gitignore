@@ -20,6 +20,7 @@ HELP.md
 *.iws
 *.iml
 *.ipr
+*.hprof
 out/
 
 ### NetBeans ###
